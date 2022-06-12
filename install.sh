@@ -12,7 +12,11 @@ cd ~/.config/dwm-flexipatch && sudo make install
 
 # Install display manager
 paru -S ly --noconfirm
+sudo systemctl enable ly.service
 
+# Install application launcher
+
+paru -S rofi --noconfirm
 
 # Clone and Link dotfiles
 

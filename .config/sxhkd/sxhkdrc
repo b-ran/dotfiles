@@ -1,0 +1,7 @@
+# Terminal
+super + Return
+	alacritty
+
+# rofi
+super + d
+	rofi -show run
