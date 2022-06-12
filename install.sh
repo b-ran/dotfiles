@@ -8,10 +8,15 @@ cd .. && rm -rf paru
 # Install window manager
 mkdir .config
 git clone https://github.com/bakkeby/dwm-flexipatch.git .config/dwm-flexipatch
+cd ~/.config/dwm-flexipatch && sudo make install
+
+# Install display manager
+paru -S ly --noconfirm
+
 
 # Clone and Link dotfiles
 
 git clone https://github.com/b-ran/dotfiles.git
-./dotfiles/util/link.sh
+./dotfiles/.bin/link.sh
 
 
