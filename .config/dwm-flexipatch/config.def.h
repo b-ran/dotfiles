@@ -346,7 +346,7 @@ static const char *layoutmenu_cmd = "layoutmenu.sh";
 
 #if COOL_AUTOSTART_PATCH
 static const char *const autostart[] = {
-	"bash",
+	"bash", NULL,
 	"sxhkd", NULL,
 	"picom", NULL,
 	NULL /* terminate */

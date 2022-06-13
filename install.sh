@@ -8,7 +8,7 @@ cd .. && rm -rf paru
 # Install window manager
 mkdir .config
 git clone https://github.com/bakkeby/dwm-flexipatch.git .config/dwm-flexipatch
-cd ~/.config/dwm-flexipatch && sudo make install
+cd ~/.config/dwm-flexipatch && sudo make clean install
 
 # Install display manager
 paru -S ly --noconfirm
