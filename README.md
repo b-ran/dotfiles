@@ -1,9 +1,11 @@
 ```
-pacman -Sy python-pip git
+pacman -Sy python-pip
 pip install --upgrade archinstall
 archinstall
 ```
 
 ```
-git clone 
+pacman -Sy git
+git clone https://github.com/b-ran/dotfiles
+./dotfiles/install.sh
 ```

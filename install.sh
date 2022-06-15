@@ -7,8 +7,8 @@ cd .. && rm -rf paru
 
 # Install window manager
 mkdir .config
-git clone https://github.com/bakkeby/dwm-flexipatch.git .config/dwm-flexipatch
-cd ~/.config/dwm-flexipatch && sudo make clean install
+git clone https://github.com/bakkeby/dwm-flexipatch.git .config/dwm
+cd ~/.config/dwm && sudo make clean install
 
 # Install display manager
 paru -S ly --noconfirm
@@ -18,9 +18,7 @@ sudo systemctl enable ly.service
 
 paru -S rofi --noconfirm
 
-# Clone and Link dotfiles
-
-git clone https://github.com/b-ran/dotfiles.git
+# Link dotfiles
 ./dotfiles/.bin/link.sh
 
 
