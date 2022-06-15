@@ -5,7 +5,7 @@ archinstall
 ```
 
 ```
-pacman -Sy git
+sudo pacman -Sy git
 git clone https://github.com/b-ran/dotfiles
 ./dotfiles/install.sh
 ```
