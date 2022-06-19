@@ -1,4 +1,7 @@
-sudo pacman -S --needed base-devel xorg xorg-xinit xorg-xrdb picom archlinux-keyring alacritty sxhkd feh ttf-iosevka-nerd --noconfirm
+sudo pacman -S --needed base-devel xorg xorg-xinit xorg-xrdb picom archlinux-keyring alacritty sxhkd feh --noconfirm
+
+# Copy dotfiles
+~/dotfiles/.bin/copy.sh
 
 # Install aur helper -- paru
 git clone https://aur.archlinux.org/paru.git
@@ -20,8 +23,4 @@ sudo systemctl enable ly.service
 
 # Install packages
 paru -S rofi nerd-fonts-complete tmux-git firefox --noconfirm
-
-# Copy dotfiles
-~/dotfiles/.bin/copy.sh
-
 

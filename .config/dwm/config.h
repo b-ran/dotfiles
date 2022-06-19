@@ -3,7 +3,7 @@ static const unsigned int borderpx       = 1;   /* border pixel of windows */
 static const unsigned int snap           = 32;  /* snap pixel */
 static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
-static const int statusmon               = 'A';  // Status shown on: -1 (all monitors), 0 (a specific monitor), 'A' (active monitor)
+static const int statusmon               = 'A'; /* Status shown on: -1 (all monitors), 0 (a specific monitor), 'A' (active monitor) */
 
 // VANITYGAPS_PATCH
 static const unsigned int gappih         = 20;  /* horiz inner gap between windows */
@@ -32,7 +32,7 @@ static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
 static const char *fonts[]               = { "JetBrainsMono Nerd Font Mono:style=Medium:size=13" };
 static const char dmenufont[]            = "JetBrainsMono Nerd Font Mono:style=Medium:size=13";
 
-static char c000000[]                    = "#000000"; // placeholder value
+static char c000000[]                    = "#000000"; /* placeholder value */
 
 static char normfgcolor[]                = "#bbbbbb";
 static char normbgcolor[]                = "#222222";
@@ -180,13 +180,14 @@ static const Layout layouts[] = {
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      comboview,      {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      combotag,       {.ui = 1 << TAG} }, \ // COMBO_PATCH
+	{ MODKEY|ShiftMask,             KEY,      combotag,       {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
+static char dmenumon[2] = "0";
 static const char *termcmd[]  = { "bash", NULL };
 #define STATUSBAR "dwmblocks"
 
