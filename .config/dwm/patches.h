@@ -1,35 +1,53 @@
-/*
- * This file contains patch control flags.
- *
- * In principle you should be able to mix and match any patches
- * you may want. In cases where patches are logically incompatible
- * one patch may take precedence over the other as noted in the
- * relevant descriptions.
- *
- * Although layouts typically come as patches they are differentiated
- * here for grouping purposes.
- */
+// ***** Enabled Patches ******
+
+// Bar modules
+
+#define BAR_AWESOMEBAR_PATCH 1 // Adds window tiles to the bar with right and left clicking show hiding.
+#define BAR_DWMBLOCKS_PATCH 1 // Adds integration with statuscmd to already installed dwmblocks instance.
+#define BAR_LTSYMBOL_PATCH 1 // Show layout symbol to the bar.
+#define BAR_STATUS_PATCH 1 // Show status in bar.
+#define BAR_STATUSCMD_PATCH 1 // Maps statusbar fields to commands.
+#define BAR_STATUS2D_PATCH 1 // Styles statusbar with colors and rectangles.
+#define BAR_SYSTRAY_PATCH 1 // Adds systray to the status bar.
+#define BAR_TAGS_PATCH 1 // Show tag symbols in the bar.
+#define BAR_UNDERLINETAGS_PATCH 1 // Underlines all selected tags.
+#define BAR_BORDER_PATCH 1 // Adds border to the status bar.
+#define BAR_TITLE_LEFT_PAD_PATCH 1 // Clip window titles to the left.
+#define BAR_IGNORE_XFT_ERRORS_WHEN_DRAWING_TEXT_PATCH 1 // Ignore Xft errors when drawing text on the status bar.
+#define BAR_PADDING_VANITYGAPS_PATCH 1 // Adds padding to the status bar with integrated from vanitygaps.
+#define BAR_STATUSALLMONS_PATCH 1 //This patch draws and updates the statusbar on all monitors.
+
+// Other patches
+
+#define ATTACHBOTTOM_PATCH 1 // adds new clients at the bottom of the stack.
+#define COMBO_PATCH 1 // Select multiple tags with a combo i.e. MOD 1 and 3.
+#define COOL_AUTOSTART_PATCH 1 // Autostart array in config.h file
+#define FULLSCREEN_PATCH 1 // Applies the monocle layout with the focused client on top and hides the bar.
+#define RESTARTSIG_PATCH 1 // Restart dwm with a keyboard shortcut.
+#define STEAM_PATCH 1 // Ignores ConfigureNotify requests for Steam windows. Stop steam from moving it around.
+#define VANITYGAPS_PATCH 1 // Adds gaps between windows
+#define PLACEMOUSE_PATCH 1 // change the position of a client in the stack using the mouse.
+#define DRAGMFACT_PATCH 1 // size the split in the tile layout  with modkey and dragging the mouse.
+#define FOCUSDIR_PATCH 1 // Allows focusing on clients based on direction (up, down, left, right) instead of client order.
+#define FOCUSMASTER_PATCH 1 // A simple patch that just puts focus back to the master client.
+#define PUSH_PATCH 1 // Provides a way to move clients up and down inside the client list.
+#define XRDB_PATCH 1 // Allows dwm to read colors from xrdb (.Xresources) during runtime.
+#define CYCLELAYOUTS_PATCH 1 // Lets you cycle through all your layouts.
+
+// Layouts
+
+#define BSTACK_LAYOUT 1 // Bottomstack layout.
+#define CENTEREDMASTER_LAYOUT 1 // Centered master layout.
+#define FIBONACCI_DWINDLE_LAYOUT 1 // Fibonacci dwindle layout.
+#define FIBONACCI_SPIRAL_LAYOUT 1 // Fibonacci spiral layout.
+#define GRIDMODE_LAYOUT 1 // Gridmode (grid) layout.
+#define TILE_LAYOUT 1 // The default tile layout.
+#define MONOCLE_LAYOUT 1 // Monocle layout
+#define COLUMNS_LAYOUT 1 // Same as the default tile layout except clients in the master area are arranged in
 
 /**
  * Bar modules
  */
-
-/* Enhanced taskbar that shows the titles of all visible windows in the status bar
- * and allows focus / hiding / unhiding of windows by clicking on the status bar.
- * Awesomebar takes precedence over fancybar.
- * https://dwm.suckless.org/patches/awesomebar/
- */
-#define BAR_AWESOMEBAR_PATCH 1
-
-/* This patch depends on statuscmd patch and adds integration with a (patched)
- * dwmblocks instance to give a clickable status bar. One must not necessarily
- * have to use dwmblocks for this feature, any status updater that has support
- * for real-time signals (SIGRTMIN) can be used.
- *
- * dwmblocks: https://github.com/torrinfail/dwmblocks
- * https://dwm.suckless.org/patches/statuscmd/
- */
-#define BAR_DWMBLOCKS_PATCH 0
 
 /* Originally the dwmblocks + statuscmd patch used a user defined signal (SIGUSR1)
  * for communicating with dwmblocks to indicate update signal and what button was
@@ -76,9 +94,6 @@
  */
 #define BAR_LAYOUTMENU_PATCH 0
 
-/* Show layout symbol in bar */
-#define BAR_LTSYMBOL_PATCH 1
-
 /* Adds powerline arrows for the status.
  * This uses statuscolors logic for choosing colors for the powerline. As these markers
  * are also control characters there is no explicit statuscmd support for this patch.
@@ -115,26 +130,10 @@
  */
 #define BAR_TAGGRID_PATCH 0
 
-/* Show status in bar */
-#define BAR_STATUS_PATCH 1
-
 /* This patch adds a clickable button to the left hand side of the statusbar.
  * https://dwm.suckless.org/patches/statusbutton/
  */
-#define BAR_STATUSBUTTON_PATCH 1
-
-/* This patch adds the ability to execute shell commands based on the mouse button and position
- * when clicking the status bar. Refer to the website for usage.
- * https://dwm.suckless.org/patches/statuscmd/
- */
-#define BAR_STATUSCMD_PATCH 0
-
-/* Status2d allows colors and rectangle drawing in your dwm status bar.
- * This patch is incompatible with the statuscolors patch which takes precedence.
- * This patch is incompatible with the extrabar patch.
- * https://dwm.suckless.org/patches/status2d/
- */
-#define BAR_STATUS2D_PATCH 1
+#define BAR_STATUSBUTTON_PATCH 0
 
 /* Supplementary patch should you want to disable alpha for the status2d section */
 #define BAR_STATUS2D_NO_ALPHA_PATCH 0
@@ -147,23 +146,27 @@
  */
 #define BAR_STATUS2D_XRDB_TERMCOLORS_PATCH 0
 
-/* The systray patch adds systray for the status bar.
- * https://dwm.suckless.org/patches/systray/
- */
-#define BAR_SYSTRAY_PATCH 1
-
-/* Show tag symbols in the bar. */
-#define BAR_TAGS_PATCH 1
 
 /* Show tag symbols + class of master window in the bar.
  * https://dwm.suckless.org/patches/taglabels/
  */
 #define BAR_TAGLABELS_PATCH 0
 
-/* This patch underlines the selected tag, or optionally all tags.
- * https://dwm.suckless.org/patches/underlinetags/
+/* Adds EWMH support for _NET_NUMBER_OF_DESKTOPS, _NET_CURRENT_DESKTOP, _NET_DESKTOP_NAMES
+ * and _NET_DESKTOP_VIEWPORT, which allows for compatibility with other bars and programs
+ * that request workspace information. For example polybar's xworkspaces module.
+ *
+ * This patch also includes support for adding the _IS_FLOATING property for floating windows
+ * allowing for compositors to treat floating windows differently to tiled windows.
+ *
+ * E.g. this setting makes picom only render shadows for floating windows:
+ *
+ *     shadow-exclude = [ "! _IS_FLOATING@:32c = 1" ];
+ *
+ * https://github.com/bakkeby/dwm-flexipatch/issues/50 (_IS_FLOATING patch)
+ * https://dwm.suckless.org/patches/ewmhtags/
  */
-#define BAR_UNDERLINETAGS_PATCH 1
+#define BAR_EWMHTAGS_PATCH 0
 
 /* This patch adds the window icon next to the window title in the bar.
  *
@@ -184,7 +187,7 @@
 #define BAR_WINICON_PATCH 0
 
 /* Show window title in bar */
-#define BAR_WINTITLE_PATCH 1
+#define BAR_WINTITLE_PATCH 0
 
 /* Shows window titles in the bar, but only for floating clients.
  * This depends on code from the flexwintitle patch.
@@ -208,7 +211,6 @@
  * you need it.
  */
 #define BAR_TITLE_RIGHT_PAD_PATCH 0
-#define BAR_TITLE_LEFT_PAD_PATCH 1
 
 /**
  * Bar options
@@ -263,17 +265,12 @@
 /* Anybar option to let dwm manage the width of the bar */
 #define BAR_ANYBAR_MANAGE_WIDTH_PATCH 0
 
-/* This patch adds a border around the status bar(s) just like the border of client windows.
- * https://codemadness.org/paste/dwm-border-bar.patch
- */
-#define BAR_BORDER_PATCH 1
-
 /* This patch centers the WM_NAME of the currently selected window on the status bar.
  * This is compatible with the wintitle, bartabgroups, flexwintitle and awesomebar bar
  * modules.
  * https://dwm.suckless.org/patches/centeredwindowname/
  */
-#define BAR_CENTEREDWINDOWNAME_PATCH 1
+#define BAR_CENTEREDWINDOWNAME_PATCH 0
 
 /* Draws a dot indicator overlayed on each tag icon for each client. The selected client
  * is drawn as a larger horizontal line.
@@ -303,21 +300,6 @@
  */
 #define BAR_EXTRASTATUS_PATCH 0
 
-/* Adds EWMH support for _NET_NUMBER_OF_DESKTOPS, _NET_CURRENT_DESKTOP, _NET_DESKTOP_NAMES
- * and _NET_DESKTOP_VIEWPORT, which allows for compatibility with other bars and programs
- * that request workspace information. For example polybar's xworkspaces module.
- *
- * This patch also includes support for adding the _IS_FLOATING property for floating windows
- * allowing for compositors to treat floating windows differently to tiled windows.
- *
- * E.g. this setting makes picom only render shadows for floating windows:
- *
- *     shadow-exclude = [ "! _IS_FLOATING@:32c = 1" ];
- *
- * https://github.com/bakkeby/dwm-flexipatch/issues/50 (_IS_FLOATING patch)
- * https://dwm.suckless.org/patches/ewmhtags/
- */
-#define BAR_EWMHTAGS_PATCH 1
 
 /* Allows the bar height to be explicitly set rather than being derived from font.
  * https://dwm.suckless.org/patches/bar_height/
@@ -335,24 +317,10 @@
  */
 #define BAR_HOLDBAR_PATCH 0
 
-/* Sometimes dwm crashes when it cannot render some glyphs in window titles (usually emoji).
- * This patch is essentially a hack to ignore any errors when drawing text on the status bar.
- * https://groups.google.com/forum/m/#!topic/wmii/7bncCahYIww
- * https://docs.google.com/viewer?a=v&pid=forums&srcid=MDAwODA2MTg0MDQyMjE0OTgzMzMBMDQ3ODQzODkyMTU3NTAyMTMxNTYBX2RUMVNtOUtDQUFKATAuMQEBdjI&authuser=0
- */
-#define BAR_IGNORE_XFT_ERRORS_WHEN_DRAWING_TEXT_PATCH 1
-
 /* This patch adds vertical and horizontal space between the statusbar and the edge of the screen.
  * https://dwm.suckless.org/patches/barpadding/
  */
 #define BAR_PADDING_PATCH 0
-
-/* Same as barpadding patch but specifically tailored for the vanitygaps patch in that the outer
- * bar padding is derived from the vanitygaps settings. In addition to this the bar padding is
- * toggled in unison when vanitygaps are toggled. Increasing or decreasing gaps during runtime
- * will not affect the bar padding.
- */
-#define BAR_PADDING_VANITYGAPS_PATCH 1
 
 /* This patch adds simple markup for status messages using pango markup.
  * This depends on the pango library v1.44 or greater.
@@ -382,10 +350,6 @@
  */
 #define BAR_STATICSTATUS_PATCH 0
 
-/* This patch draws and updates the statusbar on all monitors.
- * https://dwm.suckless.org/patches/statusallmons/
- */
-#define BAR_STATUSALLMONS_PATCH 0
 
 /* This patch enables colored text in the status bar. It changes the way colors are defined
  * in config.h allowing multiple color combinations for use in the status script.
@@ -454,11 +418,6 @@
  */
 #define ATTACHBELOW_PATCH 0
 
-/* This patch adds new clients at the bottom of the stack.
- * https://dwm.suckless.org/patches/attachbottom/
- */
-#define ATTACHBOTTOM_PATCH 1
-
 /* This patch will make dwm run "~/.local/share/dwm/autostart_blocking.sh" and
  * "~/.local/share/dwm/autostart.sh &" before entering the handler loop. One or
  * both of these files can be ommited. Note the path inside .local/share rather
@@ -507,24 +466,6 @@
  */
 #define CMDCUSTOMIZE_PATCH 0
 
-/* This patch tweaks the tagging interface so that you can select multiple tags for tag
- * or view by pressing all the right keys as a combo. For example to view tags 1 and 3,
- * hold MOD and then press and hold 1 and 3 together.
- * https://dwm.suckless.org/patches/combo/
- */
-#define COMBO_PATCH 1
-
-/* Allow dwm to execute commands from autostart array in your config.h file. When dwm exits
- * then all processes from autostart array will be killed.
- * https://dwm.suckless.org/patches/cool_autostart/
- */
-#define COOL_AUTOSTART_PATCH 1
-
-/* The cyclelayouts patch lets you cycle through all your layouts.
- * https://dwm.suckless.org/patches/cyclelayouts/
- */
-#define CYCLELAYOUTS_PATCH 0
-
 /* Make dwm respect _MOTIF_WM_HINTS property, and not draw borders around windows requesting
  * for it. Some applications use this property to notify window managers to not draw window
  * decorations.
@@ -544,13 +485,6 @@
  * cfact to adjust the client's size in the stack. This patch depends on the cfacts patch.
  */
 #define DRAGCFACT_PATCH 0
-
-/* This patch lets you resize the split in the tile layout (i.e. modify mfact) by holding
- * the modkey and dragging the mouse.
- * This patch can be a bit wonky with other layouts, but generally works.
- * https://dwm.suckless.org/patches/dragmfact/
- */
-#define DRAGMFACT_PATCH 0
 
 /* Simple dwmc client using a fork of fsignal to communicate with dwm.
  * To use this either copy the patch/dwmc shell script to somewhere in your path or
@@ -609,16 +543,6 @@
  */
 #define FOCUSADJACENTTAG_PATCH 0
 
-/* Allows focusing on clients based on direction (up, down, left, right) instead of client order.
- * https://github.com/bakkeby/patches/wiki/focusdir/
- */
-#define FOCUSDIR_PATCH 0
-
-/* A simple patch that just puts focus back to the master client.
- * https://dwm.suckless.org/patches/focusmaster/
- */
-#define FOCUSMASTER_PATCH 0
-
 /* Switch focus only by mouse click and not sloppy (focus follows mouse pointer).
  * https://dwm.suckless.org/patches/focusonclick/
  */
@@ -635,7 +559,7 @@
  * the urgency bit on the named window. This patch activates the window instead.
  * https://dwm.suckless.org/patches/focusonnetactive/
  */
-#define FOCUSONNETACTIVE_PATCH 1
+#define FOCUSONNETACTIVE_PATCH 0
 
 /* Send "fake signals" to dwm for handling, using xsetroot. This will not conflict with the
  * status bar, which also is managed using xsetroot.
@@ -643,12 +567,6 @@
  * https://dwm.suckless.org/patches/fsignal/
  */
 #define FSIGNAL_PATCH 0
-
-/* Applies the monocle layout with the focused client on top and hides the bar. When pressed
- * again it shows the bar and restores the layout that was active before going fullscreen.
- * https://dwm.suckless.org/patches/fullscreen/
- */
-#define FULLSCREEN_PATCH 1
 
 /* This patch provides a keybinding to rotate all clients in the currently selected
  * area (master or stack) without affecting the other area.
@@ -826,16 +744,6 @@
  */
 #define PERTAGBAR_PATCH 0
 
-/* This patch lets you change the position of a client in the stack using the mouse.
- * https://github.com/bakkeby/patches/wiki/placemouse
- */
-#define PLACEMOUSE_PATCH 0
-
-/* This patch provides a way to move clients up and down inside the client list.
- * https://dwm.suckless.org/patches/push/
- */
-#define PUSH_PATCH 0
-
 /* This patch provides a way to move clients up and down inside the client list,
  * but does not push up or down into the master area (except that it does not take
  * nmaster into account).
@@ -868,11 +776,6 @@
  */
 #define RESIZEPOINT_PATCH 0
 
-/* Adds a keyboard shortcut to restart dwm or alternatively by using kill -HUP dwmpid.
- * Additionally dwm can quit cleanly by using kill -TERM dwmpid.
- * https://dwm.suckless.org/patches/restartsig/
- */
-#define RESTARTSIG_PATCH 1
 
 /* Adds rio-like drawing to resize the selected client.
  * This depends on an external tool slop being installed.
@@ -1006,17 +909,6 @@
  * https://dwm.suckless.org/patches/stacker/
  */
 #define STACKER_PATCH 0
-
-/* Steam, and steam windows (games), trigger a ConfigureNotify request every time the window
- * gets focus. More so, the configure event passed along from Steam tends to have the wrong
- * x and y co-ordinates which can make the window, if floating, jump around the screen.
- *
- * This patch works around this age-old issue by ignoring the x and y co-ordinates for
- * ConfigureNotify requests relating to Steam windows.
- *
- * https://github.com/bakkeby/patches/wiki/steam
- */
-#define STEAM_PATCH 1
 
 /* Adds toggleable keyboard shortcut to make a client 'sticky', i.e. visible on all tags.
  * https://dwm.suckless.org/patches/sticky/
@@ -1192,13 +1084,6 @@
  */
 #define UNFLOATVISIBLE_PATCH 0
 
-/* This patch adds configurable gaps between windows differentiating between outer, inner,
- * horizontal and vertical gaps.
- * https://github.com/bakkeby/patches/blob/master/dwm/dwm-vanitygaps-6.2.diff
- * https://github.com/bakkeby/patches/blob/master/dwm/dwm-cfacts-vanitygaps-6.2.diff
- */
-#define VANITYGAPS_PATCH 1
-
 /* This patch adds outer gaps for the monocle layout.
  * Most gaps patches tries to avoid gaps on the monocle layout, as it is often used as a
  * fullscreen mode, hence this is enabled separately from the main vanitygaps patch.
@@ -1238,12 +1123,6 @@
  */
 #define XKB_PATCH 0
 
-/* Allows dwm to read colors from xrdb (.Xresources) during runtime. Compatible with
- * the float border color, awesomebar, urgentborder and titlecolor patches.
- * https://dwm.suckless.org/patches/xrdb/
- */
-#define XRDB_PATCH 0
-
 /* Simple patch that allows floating windows to be zoomed into the master stack position.
  * https://www.reddit.com/r/suckless/comments/ie5fe3/zoomfloating_my_own_simple_original_patch/
  */
@@ -1259,46 +1138,20 @@
  * Layouts
  */
 
-/* Bottomstack layout.
- * https://dwm.suckless.org/patches/bottomstack/
- */
-#define BSTACK_LAYOUT 0
-
 /* Bottomstack horizontal layout.
  * https://dwm.suckless.org/patches/bottomstack/
  */
 #define BSTACKHORIZ_LAYOUT 0
-
-/* Centered master layout.
- * https://dwm.suckless.org/patches/centeredmaster/
- */
-#define CENTEREDMASTER_LAYOUT 0
 
 /* Centered floating master layout.
  * https://dwm.suckless.org/patches/centeredmaster/
  */
 #define CENTEREDFLOATINGMASTER_LAYOUT 0
 
-/* Same as the default tile layout except clients in the master area are arranged in
- * columns (i.e. left to right).
- * https://dwm.suckless.org/patches/columns/
- */
-#define COLUMNS_LAYOUT 0
-
 /* Deck layout.
  * https://dwm.suckless.org/patches/deck/
  */
 #define DECK_LAYOUT 0
-
-/* Fibonacci dwindle layout.
- * https://dwm.suckless.org/patches/fibonacci/
- */
-#define FIBONACCI_DWINDLE_LAYOUT 0
-
-/* Fibonacci spiral layout.
- * https://dwm.suckless.org/patches/fibonacci/
- */
-#define FIBONACCI_SPIRAL_LAYOUT 0
 
 /* Flextile deluxe layout.
  * A revamped, more flexible, and over-the-top version of the original flextile layout.
@@ -1311,11 +1164,6 @@
  */
 #define GAPPLESSGRID_LAYOUT 0
 
-/* Gridmode (grid) layout.
- * https://dwm.suckless.org/patches/gridmode/
- */
-#define GRIDMODE_LAYOUT 0
-
 /* Horizontal grid (horizgrid) layout.
  * https://dwm.suckless.org/patches/horizgrid/
  */
@@ -1326,12 +1174,3 @@
  */
 #define NROWGRID_LAYOUT 0
 
-/* The default tile layout.
- * This can be optionally disabled in favour of other layouts.
- */
-#define TILE_LAYOUT 1
-
-/* Monocle layout (default).
- * This can be optionally disabled in favour of other layouts.
- */
-#define MONOCLE_LAYOUT 1
