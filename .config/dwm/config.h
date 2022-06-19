@@ -188,6 +188,19 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0";
+static const char *dmenucmd[] = {
+	"dmenu_run",
+	#if !NODMENU_PATCH
+	"-m", dmenumon,
+	#endif // NODMENU_PATCH
+	//"-fn", dmenufont,
+	//"-nb", normbgcolor,
+	//"-nf", normfgcolor,
+	//"-sb", selbgcolor,
+	//"-sf", selfgcolor,
+	NULL
+};
+
 static const char *termcmd[]  = { "bash", NULL };
 #define STATUSBAR "dwmblocks"
 
