@@ -1,20 +1,18 @@
 sudo pacman -S --needed base-devel xorg xorg-xinit xorg-xrdb picom archlinux-keyring alacritty sxhkd feh --noconfirm
 
-# Copy dotfiles
-~/dotfiles/.bin/copy.sh
 
 # Install aur helper -- paru
 git clone https://aur.archlinux.org/paru.git
 cd paru && makepkg -si --noconfirm
 cd .. && rm -rf paru
 
-# Install window manager - dwmflexipatch
+# Install dwm
 mkdir .config
-git clone https://github.com/bakkeby/dwm-flexipatch.git .config/dwm
-cd ~/.config/dwm && sudo make install
+git clone https://github.com/bakkeby/dwm-flexipatch.git ~/.config/dwm
+git clone https://github.com/torrinfail/dwmblocks.git ~/.config/dwmblocks
 
-# Install status bar - dwm blocks
-git clone https://github.com/torrinfail/dwmblocks.git .config/dwmblocks
+~/dotfiles/scripts/copy.sh
+cd ~/.config/dwm && sudo make install
 cd ~/.config/dwmblocks && sudo make install
 
 # Install display manager

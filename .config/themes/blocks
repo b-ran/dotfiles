@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export black=#2E3440
+export green=#A3BE8C
+export white=#D8DEE9
+export grey=#373d49
+export blue=#81A1C1
+export red=#BF616A
+export darkblue=#7292b2

@@ -1,20 +1,24 @@
 // appearance
-static const unsigned int borderpx       = 1;   /* border pixel of windows */
+static const unsigned int borderpx       = 3;   /* border pixel of windows */
 static const unsigned int snap           = 32;  /* snap pixel */
 static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
 static const int statusmon               = 'A'; /* Status shown on: -1 (all monitors), 0 (a specific monitor), 'A' (active monitor) */
 
 // VANITYGAPS_PATCH
-static const unsigned int gappih         = 20;  /* horiz inner gap between windows */
+static const unsigned int gappih         = 10;  /* horiz inner gap between windows */
 static const unsigned int gappiv         = 10;  /* vert inner gap between windows */
 static const unsigned int gappoh         = 10;  /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov         = 30;  /* vert outer gap between windows and screen edge */
+static const unsigned int gappov         = 10;  /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 
 //  BAR_SYSTRAY_PATCH
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int showsystray             = 1;   /* 0 means no systray */
+
+// BAR_STATUSPADDING_PATCH
+static const int horizpadbar             = 5;   /* horizontal padding for statusbar */
+static const int vertpadbar              = 11;   /* vertical padding for statusbar */
 
 // BAR_UNDERLINETAGS_PATCH
 static const unsigned int ulinepad = 5;         /* horizontal padding between the underline and tag */
@@ -29,8 +33,8 @@ static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
 
 
-static const char *fonts[]               = { "JetBrainsMono Nerd Font Mono:style=Medium:size=13" };
-static const char dmenufont[]            = "JetBrainsMono Nerd Font Mono:style=Medium:size=13";
+static const char *fonts[]               = { "JetBrainsMono Nerd Font Mono:style=Medium:size=10" };
+static const char dmenufont[]            = "JetBrainsMono Nerd Font Mono:style=Medium:size=10";
 
 static char c000000[]                    = "#000000"; /* placeholder value */
 
@@ -91,16 +95,17 @@ static char *colors[][ColCount] = {
 // COOL_AUTOSTART_PATCH
 static const char *const autostart[] = {
 	"bash", NULL,
+	"xrdb ~/.Xresources", NULL,
 	"sxhkd", NULL,
 	"picom", NULL,
 	"dwmblocks", NULL,
 	NULL /* terminate */
 };
 
-static char *tagicons[][NUMTAGS] = {
-	[DEFAULT_TAGS]        = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
-	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
-	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
+static char *tagicons[][4] = {
+	[DEFAULT_TAGS]        = { "", "", "", ""},
+	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D"},
+	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>"},
 };
 
 
@@ -123,14 +128,9 @@ static char *tagicons[][NUMTAGS] = {
  * the patches you enable.
  */
 static const Rule rules[] = {
-	RULE(.wintype = WTYPE "DIALOG", .isfloating = 1)
-	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
-	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
-	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	RULE(.class = "Firefox", .tags = 1 << 7)
+	RULE(.class = "Firefox", .tags = 1)
+	RULE(.class = "Alacritty", .tags = 2)
 };
-
-
 
 /* Bar rules allow you to configure what is shown where on the bar, as well as
  * introducing your own bar modules.

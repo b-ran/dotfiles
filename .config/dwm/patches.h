@@ -16,6 +16,7 @@
 #define BAR_IGNORE_XFT_ERRORS_WHEN_DRAWING_TEXT_PATCH 1 // Ignore Xft errors when drawing text on the status bar.
 #define BAR_PADDING_VANITYGAPS_PATCH 1 // Adds padding to the status bar with integrated from vanitygaps.
 #define BAR_STATUSALLMONS_PATCH 1 //This patch draws and updates the statusbar on all monitors.
+#define BAR_STATUSPADDING_PATCH 1 // Adds padding to the status bar.
 
 // Other patches
 
@@ -361,11 +362,6 @@
  * https://dwm.suckless.org/patches/statuscolors/
  */
 #define BAR_STATUSCOLORS_PATCH 0
-
-/* This patch adds configuration options for horizontal and vertical padding in the status bar.
- * https://dwm.suckless.org/patches/statuspadding/
- */
-#define BAR_STATUSPADDING_PATCH 0
 
 /* This patch adds the ability for dwm to read colors from the linux virtual console.
  *    /sys/module/vt/parameters/default_{red,grn,blu}
