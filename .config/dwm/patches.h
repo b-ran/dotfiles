@@ -2,7 +2,6 @@
 
 // Bar modules
 
-#define BAR_AWESOMEBAR_PATCH 1 // Adds window tiles to the bar with right and left clicking show hiding.
 #define BAR_DWMBLOCKS_PATCH 1 // Adds integration with statuscmd to already installed dwmblocks instance.
 #define BAR_LTSYMBOL_PATCH 1 // Show layout symbol to the bar.
 #define BAR_STATUS_PATCH 1 // Show status in bar.
@@ -117,6 +116,8 @@
  * https://gitlab.com/udiboy1209-suckless/dwm/-/commit/071f5063e8ac4280666828179f92788d893eea40#4b1a539194be7467cefbda22f675a3b7c19ceca7
  */
 #define BAR_POWERLINE_TAGS_PATCH 0
+
+#define BAR_AWESOMEBAR_PATCH 0 // Adds window tiles to the bar with right and left clicking show hiding.
 
 /* Alters the tags powerline to use forward slash instead of arrows */
 #define BAR_POWERLINE_TAGS_SLASH_PATCH 0

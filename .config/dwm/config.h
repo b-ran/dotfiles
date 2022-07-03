@@ -10,7 +10,7 @@ static const unsigned int gappih         = 10;  /* horiz inner gap between windo
 static const unsigned int gappiv         = 10;  /* vert inner gap between windows */
 static const unsigned int gappoh         = 10;  /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov         = 10;  /* vert outer gap between windows and screen edge */
-static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
+static const int smartgaps_fact          = 0;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 
 //  BAR_SYSTRAY_PATCH
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -33,8 +33,8 @@ static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
 
 
-static const char *fonts[]               = { "JetBrainsMono Nerd Font Mono:style=Medium:size=10" };
-static const char dmenufont[]            = "JetBrainsMono Nerd Font Mono:style=Medium:size=10";
+static const char *fonts[]               = { "JetBrainsMono Nerd Font Mono:style=Medium:size=13" };
+static const char dmenufont[]            = "JetBrainsMono Nerd Font Mono:style=Medium:size=15";
 
 static char c000000[]                    = "#000000"; /* placeholder value */
 
@@ -103,9 +103,9 @@ static const char *const autostart[] = {
 };
 
 static char *tagicons[][4] = {
-	[DEFAULT_TAGS]        = { "", "", "", ""},
-	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D"},
-	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>"},
+	[DEFAULT_TAGS]        = { "", "", "", "", "", "", "", "", ""},
+	[ALTERNATIVE_TAGS]    = { "1", "2", "3", "4", "5", "6", "7", "8", "9"},
+	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>"},
 };
 
 
@@ -129,7 +129,6 @@ static char *tagicons[][4] = {
  */
 static const Rule rules[] = {
 	RULE(.class = "Firefox", .tags = 1)
-	RULE(.class = "Alacritty", .tags = 2)
 };
 
 /* Bar rules allow you to configure what is shown where on the bar, as well as

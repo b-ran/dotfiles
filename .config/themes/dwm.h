@@ -18,6 +18,26 @@
 #define orange1 #d65d0e
 #define orange2 #fe8019
 
+
+
+#define black   #1e222a
+#define gray2   #2e323a // unfocused window border
+#define gray3   #545862
+#define gray4   #6d8dad
+#define blue    #61afef  // focused window border
+#define green   #7EC7A2
+#define red     #e06c75
+#define orange  #caaa6a
+#define yellow  #EBCB8B
+#define pink    #c678dd
+#define white   #Abb2bf
+#define col_borderbar   #1e222a // inner border
+
+
+
+
+
+
 dwm.normfgcolor                : orange2
 dwm.normbgcolor                : black
 dwm.normbordercolor            : black
@@ -38,7 +58,7 @@ dwm.titleselbgcolor            : black
 dwm.titleselbordercolor        : yellow1
 dwm.titleselfloatcolor         : blue1
 
-dwm.tagsnormfgcolor		         : black
+dwm.tagsnormfgcolor		       : black
 dwm.tagsnormbgcolor            : green1
 dwm.tagsnormbordercolor        : yellow1
 dwm.tagsnormfloatcolor         : black0
