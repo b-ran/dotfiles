@@ -4,36 +4,36 @@ export bar=#1E222A
 fg=$bar
 
 export vol_ic_fg=$fg
-export vol_ic_bg=#E06C75
+export vol_ic_bg=#D7424D
 export vol_fg=$fg
-export vol_bg=#D7424D
+export vol_bg=#E06C75
 
 export cpu_ic_fg=$fg
-export cpu_ic_bg=#98C379
+export cpu_ic_bg=#7DB356
 export cpu_fg=$fg
-export cpu_bg=#7DB356
+export cpu_bg=#98C379
 
 export mem_ic_fg=$fg
-export mem_ic_bg=#E5C07B
+export mem_ic_bg=#DDAC50
 export mem_fg=$fg
-export mem_bg=#DDAC50
+export mem_bg=#E5C07B
 
 export storage_ic_fg=$fg
-export storage_ic_bg=#61AFEF
+export storage_ic_bg=#3398EA
 export storage_fg=$fg
-export storage_bg=#3398EA
+export storage_bg=#61AFEF
 
 export time_ic_fg=$fg
-export time_ic_bg=#C678DD
+export time_ic_bg=#B54FD3
 export time_fg=$fg
-export time_bg=#B54FD3
+export time_bg=#C678DD
 
 export date_ic_fg=$fg
-export date_ic_bg=#56B6C2
+export date_ic_bg=#3D9CA8
 export date_fg=$fg
-export date_bg=#3D9CA8
+export date_bg=#56B6C2
 
 export uptime_ic_fg=$fg
-export uptime_ic_bg=#ABB2BF
+export uptime_ic_bg=#8E97A9
 export uptime_fg=$fg
-export uptime_bg=#8E97A9
+export uptime_bg=#ABB2BF
