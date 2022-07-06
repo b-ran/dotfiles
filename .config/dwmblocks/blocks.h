@@ -5,7 +5,8 @@ static const Block blocks[] = {
 	{"", "~/dotfiles/scripts/blocks/cpu.sh",         3,  0},
 	{"", "~/dotfiles/scripts/blocks/memory.sh",      3,  0},
 	{"", "~/dotfiles/scripts/blocks/storage.sh",     3,  0},
-	{"", "~/dotfiles/scripts/blocks/clock.sh",       10, 0},
+	{"", "~/dotfiles/scripts/blocks/time.sh",        3,  0},
+	{"", "~/dotfiles/scripts/blocks/date.sh",        60, 0},
 	{"", "~/dotfiles/scripts/blocks/uptime.sh",      30, 0},
 };
 

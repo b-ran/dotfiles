@@ -1,9 +1,39 @@
 #!/bin/bash
 
-export black=#2E3440
-export green=#A3BE8C
-export white=#D8DEE9
-export grey=#373d49
-export blue=#81A1C1
-export red=#BF616A
-export darkblue=#7292b2
+export bar=#1E222A
+fg=$bar
+
+export vol_ic_fg=$fg
+export vol_ic_bg=#E06C75
+export vol_fg=$fg
+export vol_bg=#D7424D
+
+export cpu_ic_fg=$fg
+export cpu_ic_bg=#98C379
+export cpu_fg=$fg
+export cpu_bg=#7DB356
+
+export mem_ic_fg=$fg
+export mem_ic_bg=#E5C07B
+export mem_fg=$fg
+export mem_bg=#DDAC50
+
+export storage_ic_fg=$fg
+export storage_ic_bg=#61AFEF
+export storage_fg=$fg
+export storage_bg=#3398EA
+
+export time_ic_fg=$fg
+export time_ic_bg=#C678DD
+export time_fg=$fg
+export time_bg=#B54FD3
+
+export date_ic_fg=$fg
+export date_ic_bg=#56B6C2
+export date_fg=$fg
+export date_bg=#3D9CA8
+
+export uptime_ic_fg=$fg
+export uptime_ic_bg=#ABB2BF
+export uptime_fg=$fg
+export uptime_bg=#8E97A9
