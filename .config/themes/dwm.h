@@ -1,79 +1,68 @@
-#define white 	#ebdbb2
-#define black 	#282828
-#define black0 	#1d2021
-#define gray1 	#928374
-#define gray2 	#a89984
-#define red1 	#cc241d
-#define red2 	#fb4934
-#define green1 	#98971a
-#define green2 	#b8bb26
-#define yellow1 #d79921
-#define yellow2 #fabd2f
-#define blue1 	#458488
-#define blue2 	#83a598
-#define purple1 #b16286
-#define purple2 #d3869b
-#define aqua1 	#689d6a
-#define aqua2 	#8ec07c
-#define orange1 #d65d0e
-#define orange2 #fe8019
+#define bar #1E222A
+#define unfocused_window_border #2E323A
+#define focused_window_border #61AFEF
+#define unknown #FE8019
+#define unknown2 #FE1925
 
 
+dwm.normfgcolor                : unknown
+dwm.normbgcolor                : bar
+dwm.normbordercolor            : unfocused_window_border
+dwm.normfloatcolor             : unfocused_window_border
 
-#define black   #1e222a
-#define gray2   #2e323a // unfocused window border
-#define gray3   #545862
-#define gray4   #6d8dad
-#define blue    #61afef  // focused window border
-#define green   #7EC7A2
-#define red     #e06c75
-#define orange  #caaa6a
-#define yellow  #EBCB8B
-#define pink    #c678dd
-#define white   #Abb2bf
-#define col_borderbar   #1e222a // inner border
+dwm.selfgcolor                 : unknown
+dwm.selbgcolor                 : focused_window_border
+dwm.selbordercolor             : focused_window_border
+dwm.selfloatcolor              : focused_window_border
 
+dwm.titlenormfgcolor           : unknown
+dwm.titlenormbgcolor           : bar
+dwm.titlenormbordercolor       : bar
+dwm.titlenormfloatcolor        : unknown
 
+dwm.titleselfgcolor            : unknown
+dwm.titleselbgcolor            : unknown
+dwm.titleselbordercolor        : unknown
+dwm.titleselfloatcolor         : unknown
 
+dwm.tagsnormfgcolor		       : bar
+dwm.tagsnormbgcolor            : unknown
+dwm.tagsnormbordercolor        : unknown
+dwm.tagsnormfloatcolor         : unknown
 
+dwm.tagsselfgcolor             : unknown
+dwm.tagsselbgcolor             : bar
+dwm.tagsselbordercolor         : unknown
+dwm.tagsselfloatcolor          : unknown
 
+dwm.hidnormfgcolor             : unknown2
+dwm.hidselfgcolor              : unknown2
+dwm.hidnormbgcolor             : unknown2
+dwm.hidselbgcolor              : unknown2
 
-dwm.normfgcolor                : orange2
-dwm.normbgcolor                : black
-dwm.normbordercolor            : black
-dwm.normfloatcolor             : gray1
+dwm.urgfgcolor				   : unknown
+dwm.urgbgcolor				   : unknown
+dwm.urgbordercolor			   : unknown
+dwm.urgfloatcolor			   : unknown
 
-dwm.selfgcolor                 : blue1
-dwm.selbgcolor                 : black
-dwm.selbordercolor             : orange2
-dwm.selfloatcolor              : blue1
+dwm.tags.fg1                   : #E06C75
+dwm.tags.fg2                   : #98C379
+dwm.tags.fg3                   : #E5C07B
+dwm.tags.fg4                   : #61AFEF
+dwm.tags.fg5                   : #C678DD
+dwm.tags.fg6                   : #56B6C2
+dwm.tags.fg7                   : #D7424D
+dwm.tags.fg8                   : #7DB356
+dwm.tags.fg9                   : #ABB2BF
+dwm.tags.layoutfg              : bar
 
-dwm.titlenormfgcolor           : gray1
-dwm.titlenormbgcolor           : black
-dwm.titlenormbordercolor       : black
-dwm.titlenormfloatcolor        : gray1
-
-dwm.titleselfgcolor            : white
-dwm.titleselbgcolor            : black
-dwm.titleselbordercolor        : yellow1
-dwm.titleselfloatcolor         : blue1
-
-dwm.tagsnormfgcolor		       : black
-dwm.tagsnormbgcolor            : green1
-dwm.tagsnormbordercolor        : yellow1
-dwm.tagsnormfloatcolor         : black0
-
-dwm.tagsselfgcolor             : green1
-dwm.tagsselbgcolor             : black
-dwm.tagsselbordercolor         : aqua1
-dwm.tagsselfloatcolor          : black0
-
-dwm.hidnormfgcolor             : red1
-dwm.hidselfgcolor              : red1
-dwm.hidnormbgcolor             : black
-dwm.hidselbgcolor              : black
-
-dwm.urgfgcolor					: black
-dwm.urgbgcolor					: red1
-dwm.urgbordercolor				: red1
-dwm.urgfloatcolor				: green1
+dwm.tags.bg1                   : bar
+dwm.tags.bg2                   : bar
+dwm.tags.bg3                   : bar
+dwm.tags.bg4                   : bar
+dwm.tags.bg5                   : bar
+dwm.tags.bg6                   : bar
+dwm.tags.bg7                   : bar
+dwm.tags.bg8                   : bar
+dwm.tags.bg9                   : bar
+dwm.tags.layoutbg              : bar
