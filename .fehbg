@@ -1,1 +1,1 @@
-feh --no-fehbg --bg-scale "$HOME/.dwm/wallpaper.jpg"
+feh --no-fehbg --bg-scale "$HOME/.dwm/wallpaper.png"
