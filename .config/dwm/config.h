@@ -129,6 +129,9 @@ static const char *const autostart[] = {
 	"sxhkd", NULL,
 	"picom", NULL,
 	"dwmblocks", NULL,
+	"bash $HOME/.fehbg", NULL,
+	"udiskie -At", NULL,
+	"coolero", NULL,
 	NULL /* terminate */
 };
 
