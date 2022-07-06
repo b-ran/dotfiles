@@ -7,7 +7,7 @@
 
 dwm.normfgcolor                : unknown
 dwm.normbgcolor                : bar
-dwm.normbordercolor            : unfocused_window_border
+dwm.normbordercolor            : bar
 dwm.normfloatcolor             : unfocused_window_border
 
 dwm.selfgcolor                 : unknown
@@ -26,7 +26,7 @@ dwm.titleselbordercolor        : unknown
 dwm.titleselfloatcolor         : unknown
 
 dwm.tagsnormfgcolor		       : bar
-dwm.tagsnormbgcolor            : unknown
+dwm.tagsnormbgcolor            : bar
 dwm.tagsnormbordercolor        : unknown
 dwm.tagsnormfloatcolor         : unknown
 
