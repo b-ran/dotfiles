@@ -16,4 +16,4 @@ paru -S ly --noconfirm
 sudo systemctl enable ly.service
 
 # Install packages
-paru -S rofi tmux-git firefox nerd-fonts-complete pamixer thunar udiskie coolero --noconfirm
+paru -S rofi tmux-git firefox nerd-fonts-complete pamixer thunar udiskie --noconfirm
