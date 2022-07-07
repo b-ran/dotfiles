@@ -1,49 +1,48 @@
 #define bar #1E222A
 #define unfocused #2E323A
 #define focused #61AFEF
-#define unknown #FE1925
-#define unknown2 #FE8019
+#define null #FE1925
 
 
-dwm.normfgcolor                : unknown
+dwm.normfgcolor                : null
 dwm.normbgcolor                : bar
-dwm.normbordercolor            : unfocused
+dwm.normbordercolor            : bar
 dwm.normfloatcolor             : unfocused
 
-dwm.selfgcolor                 : unknown
+dwm.selfgcolor                 : null
 dwm.selbgcolor                 : focused
 dwm.selbordercolor             : focused
 dwm.selfloatcolor              : focused
 
-dwm.titlenormfgcolor           : unknown
+dwm.titlenormfgcolor           : null
 dwm.titlenormbgcolor           : bar
 dwm.titlenormbordercolor       : bar
-dwm.titlenormfloatcolor        : unknown
+dwm.titlenormfloatcolor        : null
 
-dwm.titleselfgcolor            : unknown
-dwm.titleselbgcolor            : unknown
-dwm.titleselbordercolor        : unknown
-dwm.titleselfloatcolor         : unknown
+dwm.titleselfgcolor            : null
+dwm.titleselbgcolor            : null
+dwm.titleselbordercolor        : null
+dwm.titleselfloatcolor         : null
 
-dwm.tagsnormfgcolor            : bar
+dwm.tagsnormfgcolor            : unfocused
 dwm.tagsnormbgcolor            : bar
-dwm.tagsnormbordercolor        : unknown
-dwm.tagsnormfloatcolor         : unknown
+dwm.tagsnormbordercolor        : null
+dwm.tagsnormfloatcolor         : null
 
-dwm.tagsselfgcolor             : unknown
+dwm.tagsselfgcolor             : null
 dwm.tagsselbgcolor             : bar
-dwm.tagsselbordercolor         : unknown
-dwm.tagsselfloatcolor          : unknown
+dwm.tagsselbordercolor         : null
+dwm.tagsselfloatcolor          : null
 
-dwm.hidnormfgcolor             : unknown2
-dwm.hidselfgcolor              : unknown2
-dwm.hidnormbgcolor             : unknown2
-dwm.hidselbgcolor              : unknown2
+dwm.hidnormfgcolor             : null
+dwm.hidselfgcolor              : null
+dwm.hidnormbgcolor             : null
+dwm.hidselbgcolor              : null
 
-dwm.urgfgcolor                 : unknown
-dwm.urgbgcolor                 : unknown
-dwm.urgbordercolor             : unknown
-dwm.urgfloatcolor              : unknown
+dwm.urgfgcolor                 : null
+dwm.urgbgcolor                 : null
+dwm.urgbordercolor             : null
+dwm.urgfloatcolor              : null
 
 dwm.tags.fg1                   : #E06C75
 dwm.tags.fg2                   : #98C379
@@ -51,9 +50,9 @@ dwm.tags.fg3                   : #E5C07B
 dwm.tags.fg4                   : #61AFEF
 dwm.tags.fg5                   : #C678DD
 dwm.tags.fg6                   : #56B6C2
-dwm.tags.fg7                   : #D7424D
-dwm.tags.fg8                   : #7DB356
-dwm.tags.fg9                   : #ABB2BF
+dwm.tags.fg7                   : null
+dwm.tags.fg8                   : null
+dwm.tags.fg9                   : null
 dwm.tags.layoutfg              : #98C379
 
 dwm.tags.bg1                   : bar
@@ -62,7 +61,7 @@ dwm.tags.bg3                   : bar
 dwm.tags.bg4                   : bar
 dwm.tags.bg5                   : bar
 dwm.tags.bg6                   : bar
-dwm.tags.bg7                   : bar
-dwm.tags.bg8                   : bar
-dwm.tags.bg9                   : bar
+dwm.tags.bg7                   : null
+dwm.tags.bg8                   : null
+dwm.tags.bg9                   : null
 dwm.tags.layoutbg              : bar
