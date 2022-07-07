@@ -1,8 +1,8 @@
 #define bar #1E222A
 #define unfocused #2E323A
 #define focused #61AFEF
-#define unknown #FE8019
-#define unknown2 #FE1925
+#define unknown #FE1925
+#define unknown2 #FE8019
 
 
 dwm.normfgcolor                : unknown
@@ -51,7 +51,10 @@ dwm.tags.fg3                   : #E5C07B
 dwm.tags.fg4                   : #61AFEF
 dwm.tags.fg5                   : #C678DD
 dwm.tags.fg6                   : #56B6C2
-dwm.tags.layoutfg              : bar
+dwm.tags.fg7                   : #D7424D
+dwm.tags.fg8                   : #7DB356
+dwm.tags.fg9                   : #ABB2BF
+dwm.tags.layoutfg              : #98C379
 
 dwm.tags.bg1                   : bar
 dwm.tags.bg2                   : bar
@@ -59,3 +62,7 @@ dwm.tags.bg3                   : bar
 dwm.tags.bg4                   : bar
 dwm.tags.bg5                   : bar
 dwm.tags.bg6                   : bar
+dwm.tags.bg7                   : bar
+dwm.tags.bg8                   : bar
+dwm.tags.bg9                   : bar
+dwm.tags.layoutbg              : bar
