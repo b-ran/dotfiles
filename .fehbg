@@ -1,1 +1,1 @@
-feh --no-fehbg --bg-scale "$HOME/.dwm/wallpaper.png"
+feh --no-fehbg --bg-scale "$HOME/.config/themes/wallpaper.png"
