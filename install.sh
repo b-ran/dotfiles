@@ -1,4 +1,4 @@
-sudo pacman -S --needed base-devel xorg xorg-xinit xorg-xrdb xmenu imlib2 picom archlinux-keyring alacritty sxhkd feh --noconfirm
+sudo pacman -S --needed base-devel xorg xorg-xinit xorg-xrdb picom archlinux-keyring alacritty sxhkd feh --noconfirm
 
 # Install aur helper -- paru
 git clone https://aur.archlinux.org/paru.git
@@ -16,4 +16,4 @@ paru -S ly --noconfirm
 sudo systemctl enable ly.service
 
 # Install packages
-paru -S rofi tmux-git firefox nerd-fonts-complete pamixer thunar udiskie --noconfirm
+paru -S rofi tmux-git nerd-fonts-complete pamixer xmenu imlib2 udiskie --noconfirm

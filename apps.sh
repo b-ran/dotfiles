@@ -1,1 +1,1 @@
-paru -S coolero --noconfirm
+paru -S coolero thunar firefox --noconfirm
