@@ -1,4 +1,4 @@
-sudo pacman -S --needed base-devel xorg xorg-xinit xorg-xrdb picom archlinux-keyring alacritty sxhkd feh --noconfirm
+sudo pacman -S --needed base-devel xorg xorg-xinit xorg-xrdb xmenu imlib2 picom archlinux-keyring alacritty sxhkd feh --noconfirm
 
 # Install aur helper -- paru
 git clone https://aur.archlinux.org/paru.git

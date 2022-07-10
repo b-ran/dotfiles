@@ -53,7 +53,7 @@
 #define Button7                 7
 #define Button8                 8
 #define Button9                 9
-#define NUMTAGS                 6
+#define NUMTAGS                 5
 #define BARRULES                20
 #define BUTTONMASK              (ButtonPressMask|ButtonReleaseMask)
 #define CLEANMASK(mask)         (mask & ~(numlockmask|LockMask) & (ShiftMask|ControlMask|Mod1Mask|Mod2Mask|Mod3Mask|Mod4Mask|Mod5Mask))
@@ -98,7 +98,7 @@ enum {
 	SchemeTag5,
 	SchemeTag6,
 	SchemeTag7,
-    SchemeTag8,
+	SchemeTag8,
 	SchemeTag9,
 	SchemeLayout,
 }; /* color schemes */
@@ -184,6 +184,7 @@ typedef struct {
 	int (*widthfunc)(Bar *bar, BarArg *a);
 	int (*drawfunc)(Bar *bar, BarArg *a);
 	int (*clickfunc)(Bar *bar, Arg *arg, BarArg *a);
+	int (*hoverfunc)(Bar *bar, BarArg *a, XMotionEvent *ev);
 	char *name; // for debugging
 	int x, w; // position, width for internal use
 } BarRule;
@@ -208,7 +209,6 @@ struct Client {
 	int bw, oldbw;
 	unsigned int tags;
 	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;
-	int beingmoved;
 	int issteam;
 	Client *next;
 	Client *snext;
@@ -251,7 +251,9 @@ struct Monitor {
 	Monitor *next;
 	Bar *bar;
 	const Layout *lt[2];
-	unsigned int colorseltag;
+	Window tagwin;
+	int previewshow;
+	Pixmap tagmap[NUMTAGS];
 };
 
 typedef struct {
@@ -708,6 +710,11 @@ cleanupmon(Monitor *mon)
 			systray->bar = NULL;
 		free(bar);
 	}
+	for (size_t i = 0; i < NUMTAGS; i++)
+		if (mon->tagmap[i])
+			XFreePixmap(dpy, mon->tagmap[i]);
+	XUnmapWindow(dpy, mon->tagwin);
+	XDestroyWindow(dpy, mon->tagwin);
 	free(mon);
 }
 
@@ -889,7 +896,6 @@ createmon(void)
 	Bar *bar;
 
 	m = ecalloc(1, sizeof(Monitor));
-	m->colorseltag = colorseltag;
 	m->tagset[0] = m->tagset[1] = 1;
 	m->mfact = mfact;
 	m->nmaster = nmaster;
@@ -991,7 +997,7 @@ void
 drawbar(Monitor *m)
 {
 	Bar *bar;
-	
+
 	if (m->showbar)
 		for (bar = m->bar; bar; bar = bar->next)
 			drawbarwin(bar);
@@ -1516,7 +1522,16 @@ motionnotify(XEvent *e)
 {
 	static Monitor *mon = NULL;
 	Monitor *m;
+	Bar *bar;
 	XMotionEvent *ev = &e->xmotion;
+
+	if ((bar = wintobar(ev->window))) {
+		barhover(e, bar);
+		return;
+	}
+
+	if (selmon->previewshow != 0)
+		hidetagpreview(selmon);
 
 	if (ev->window != root)
 		return;
@@ -2040,6 +2055,7 @@ setup(void)
 
 	updatebars();
 	updatestatus();
+	updatepreview();
 
 	/* supporting window for NetWMCheck */
 	wmcheckwin = XCreateSimpleWindow(dpy, root, 0, 0, 1, 1, 0, 0, 0);
@@ -2220,6 +2236,7 @@ toggleview(const Arg *arg)
 
 
 	if (newtagset) {
+		tagpreviewswitchtag();
 		selmon->tagset[selmon->seltags] = newtagset;
 
 		focus(NULL);
@@ -2300,7 +2317,7 @@ updatebars(void)
 	XSetWindowAttributes wa = {
 		.override_redirect = True,
 		.background_pixmap = ParentRelative,
-		.event_mask = ButtonPressMask|ExposureMask
+		.event_mask = ButtonPressMask|ExposureMask|PointerMotionMask
 	};
 	XClassHint ch = {"dwm", "dwm"};
 	for (m = mons; m; m = m->next) {
@@ -2566,6 +2583,7 @@ view(const Arg *arg)
 	{
 		return;
 	}
+	tagpreviewswitchtag();
 	selmon->seltags ^= 1; /* toggle sel tagset */
 	if (arg->ui & TAGMASK)
 		selmon->tagset[selmon->seltags] = arg->ui & TAGMASK;

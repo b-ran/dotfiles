@@ -1,6 +1,7 @@
 /* Bar functionality */
 #include "bar_indicators.c"
 #include "bar_tagicons.c"
+#include "bar.c"
 
 #include "bar_dwmblocks.c"
 #include "combo.c"
@@ -8,10 +9,10 @@
 #include "bar_status.c"
 #include "bar_status2d.c"
 #include "bar_statuscmd.c"
+#include "bar_tagpreview.c"
 #include "bar_tags.c"
-#include "bar_wintitle.c"
 #include "bar_systray.c"
-#include "bar_colorfultags.c"
+#include "bar_layoutmenu.c"
 
 /* Other patches */
 #include "attachx.c"
@@ -20,9 +21,7 @@
 #include "cyclelayouts.c"
 #include "dragcfact.c"
 #include "focusdir.c"
-#include "focusmaster.c"
 #include "fullscreen.c"
-#include "placemouse.c"
 #include "push.c"
 #include "restartsig.c"
 #include "vanitygaps.c"

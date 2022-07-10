@@ -10,9 +10,9 @@ dwm.normbordercolor            : bar
 dwm.normfloatcolor             : unfocused
 
 dwm.selfgcolor                 : null
-dwm.selbgcolor                 : focused
+dwm.selbgcolor                 : null
 dwm.selbordercolor             : focused
-dwm.selfloatcolor              : focused
+dwm.selfloatcolor              : null
 
 dwm.titlenormfgcolor           : null
 dwm.titlenormbgcolor           : bar
