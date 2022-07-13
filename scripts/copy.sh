@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp -rf ~/dotfiles/.config/* ~/.config/
-cp -rf ~/dotfiles/.Xresources ~/.Xresources
-cp -rf ~/dotfiles/.fehbg ~/.fehbg
-sudo mkdir -p /usr/share/xsessions && sudo cp -rf ~/dotfiles/xsessions/* /usr/share/xsessions
+cp -srf ~/dotfiles/.config/* ~/.config/
+cp -srf ~/dotfiles/.Xresources ~/.Xresources
+cp -srf ~/dotfiles/.fehbg ~/.fehbg
+sudo mkdir -p /usr/share/xsessions && sudo cp -srf ~/dotfiles/xsessions/* /usr/share/xsessions

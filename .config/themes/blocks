@@ -5,8 +5,8 @@ fg=$bar
 
 export vol_ic_fg=$fg
 export vol_ic_bg=#D7424D
-export vol_fg=$fg
-export vol_bg=#E06C75
+export vol_fg=$vol_ic_bg
+export vol_bg=$bar
 
 export cpu_ic_fg=$fg
 export cpu_ic_bg=#7DB356
@@ -35,5 +35,5 @@ export date_bg=#56B6C2
 
 export uptime_ic_fg=$fg
 export uptime_ic_bg=#8E97A9
-export uptime_fg=$fg
-export uptime_bg=#ABB2BF
+export uptime_fg=$uptime_ic_bg
+export uptime_bg=$bar
