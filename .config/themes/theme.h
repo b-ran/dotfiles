@@ -1,6 +1,8 @@
-#define bar #1E222A
+#define bar #282C34
 #define unfocused #2E323A
 #define focused #61AFEF
+#define layout #98C379
+#define text #FFFFFF
 #define null #FE1925
 
 
@@ -49,19 +51,16 @@ dwm.tags.fg2                   : #98C379
 dwm.tags.fg3                   : #E5C07B
 dwm.tags.fg4                   : #61AFEF
 dwm.tags.fg5                   : #C678DD
-dwm.tags.fg6                   : #56B6C2
-dwm.tags.fg7                   : null
-dwm.tags.fg8                   : null
-dwm.tags.fg9                   : null
-dwm.tags.layoutfg              : #98C379
+dwm.tags.layoutfg              : layout
 
 dwm.tags.bg1                   : bar
 dwm.tags.bg2                   : bar
 dwm.tags.bg3                   : bar
 dwm.tags.bg4                   : bar
 dwm.tags.bg5                   : bar
-dwm.tags.bg6                   : bar
-dwm.tags.bg7                   : null
-dwm.tags.bg8                   : null
-dwm.tags.bg9                   : null
 dwm.tags.layoutbg              : bar
+
+xmenu.background               : bar
+xmenu.foreground               : text
+xmenu.selbackground            : layout
+xmenu.selforeground            : text

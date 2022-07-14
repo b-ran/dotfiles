@@ -136,7 +136,7 @@ static const char *const autostart[] = {
 	"udiskie -At", NULL,
 	"coolero", NULL,
 	NULL /* terminate */
-};
+};
 
 
 /* Tags

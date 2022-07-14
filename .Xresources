@@ -6,4 +6,4 @@ Xft.hintstyle:	hintslight
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 
-#include ".config/themes/dwm.h"
+#include ".config/themes/theme.h"

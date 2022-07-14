@@ -1,6 +1,6 @@
 static struct Config config = {
 	/* font, separate different fonts with comma */
-	.font = "monospace:size=9,DejaVuSansMono:size=9",
+	.font = "JetBrains Mono:style:medium:size=10",
 
 	/* colors */
 	.background_color = "#FFFFFF",
@@ -31,7 +31,7 @@ static struct Config config = {
 	.triangle_height = 7,
 
 	/* the icon size is equal to .height_pixels - .iconpadding * 2 */
-	.iconpadding = 2,eeeee
+	.iconpadding = 2,
 
 	/* area around the icon, the triangle and the separator */
 	.horzpadding = 8,
