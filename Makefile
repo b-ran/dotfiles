@@ -3,3 +3,4 @@ build:
 	git checkout main
 	rm -rf .config/dwm
 	mv dwm .config/dwm
+	git checkout .config/dwm/config.h
