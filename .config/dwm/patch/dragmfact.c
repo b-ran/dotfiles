@@ -22,6 +22,8 @@ dragmfact(const Arg *arg)
 
 	if (!n)
 		return;
+	else if (m->lt[m->sellt]->arrange == &centeredmaster && (fixed || n - m->nmaster > 1))
+		center = 1;
 	else if (m->lt[m->sellt]->arrange == &bstack)
 		horizontal = 1;
 

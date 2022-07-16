@@ -34,6 +34,7 @@
 #include "xrdb.h"
 /* Layouts */
 #include "layout_bstack.h"
+#include "layout_centeredmaster.h"
 #include "layout_columns.h"
 #include "layout_fibonacci.h"
 #include "layout_grid.h"
