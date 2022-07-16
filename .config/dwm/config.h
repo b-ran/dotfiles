@@ -11,6 +11,9 @@ static const unsigned int gappov         = 10;  /* vert outer gap between window
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
+enum showtab_modes { showtab_never, showtab_auto, showtab_nmodes, showtab_always};
+static const int showtab                 = showtab_auto;        /* Default tab bar show mode */
+static const int toptab                  = False;               /* False means bottom tab bar */
 static const int vertpad                 = 10;  /* vertical padding of bar */
 static const int sidepad                 = 10;  /* horizontal padding of bar */
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index), 'A' (active monitor) */
@@ -281,6 +284,7 @@ static Key keys[] = {
 	/* modifier                     key            function                argument */
 	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_b,          togglebar,              {0} },
+	{ MODKEY|ControlMask,           XK_b,          tabmode,                {-1} },
 	{ MODKEY|ControlMask,           XK_j,          focusstack,             {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_k,          focusstack,             {.i = -1 } },
 	{ MODKEY,                       XK_Left,       focusdir,               {.i = 0 } }, // left
@@ -353,7 +357,7 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,                   Button1,        sigstatusbar,   {.i = 1 } },
 	{ ClkStatusText,        0,                   Button2,        sigstatusbar,   {.i = 2 } },
 	{ ClkStatusText,        0,                   Button3,        sigstatusbar,   {.i = 3 } },
-	{ ClkClientWin,         MODKEY|ShiftMask,    Button1,        movemouse,      {0} },
+	{ ClkClientWin,         MODKEY,              Button1,        moveorplace,    {.i = 1} },
 	{ ClkClientWin,         MODKEY,              Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY|ShiftMask,    Button3,        resizemouse,    {0} },
 	{ ClkClientWin,         MODKEY,              Button3,        dragcfact,      {0} },
@@ -362,6 +366,7 @@ static Button buttons[] = {
 	{ ClkTagBar,            0,                   Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,              Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,              Button3,        toggletag,      {0} },
+	{ ClkTabBar,            0,                   Button1,        focuswin,       {0} },
 };
 
 
