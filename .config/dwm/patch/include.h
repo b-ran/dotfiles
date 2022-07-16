@@ -26,6 +26,7 @@
 #include "fullscreen.h"
 #include "pertag.h"
 #include "placemouse.h"
+#include "push.h"
 #include "restartsig.h"
 #include "seamless_restart.h"
 #include "tab.h"

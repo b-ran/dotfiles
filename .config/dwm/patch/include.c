@@ -25,6 +25,7 @@
 #include "fullscreen.c"
 #include "pertag.c"
 #include "placemouse.c"
+#include "push.c"
 #include "restartsig.c"
 #include "tab.c"
 #include "vanitygaps.c"
