@@ -11,6 +11,12 @@ static const unsigned int gappov         = 30;  /* vert outer gap between window
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
+/*  Display modes of the tab bar: never shown, always shown, shown only in  */
+/*  monocle mode in the presence of several windows.                        */
+/*  Modes after showtab_nmodes are disabled.                                */
+enum showtab_modes { showtab_never, showtab_auto, showtab_nmodes, showtab_always};
+static const int showtab                 = showtab_auto;        /* Default tab bar show mode */
+static const int toptab                  = False;               /* False means bottom tab bar */
 static const int vertpad                 = 10;  /* vertical padding of bar */
 static const int sidepad                 = 10;  /* horizontal padding of bar */
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index), 'A' (active monitor) */
@@ -232,7 +238,6 @@ static const Layout layouts[] = {
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 	{ "TTT",      bstack },
-	{ "|M|",      centeredmaster },
 	{ "|||",      col },
 	{ "(@)",      spiral },
 	{ "[\\]",     dwindle },
@@ -242,7 +247,7 @@ static const Layout layouts[] = {
 
 
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      comboview,      {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -266,7 +271,7 @@ static const char *dmenucmd[] = {
 	"-sf", selfgcolor,
 	NULL
 };
-static const char *termcmd[]  = { "bash", NULL };
+static const char *termcmd[]  = { "st", NULL };
 
 /* This defines the name of the executable that handles the bar (used for signalling purposes) */
 #define STATUSBAR "dwmblocks"
@@ -277,14 +282,13 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,          spawn,                  {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_b,          togglebar,              {0} },
+	{ MODKEY|ControlMask,           XK_b,          tabmode,                {-1} },
 	{ MODKEY,                       XK_j,          focusstack,             {.i = +1 } },
 	{ MODKEY,                       XK_k,          focusstack,             {.i = -1 } },
 	{ MODKEY,                       XK_Left,       focusdir,               {.i = 0 } }, // left
 	{ MODKEY,                       XK_Right,      focusdir,               {.i = 1 } }, // right
 	{ MODKEY,                       XK_Up,         focusdir,               {.i = 2 } }, // up
 	{ MODKEY,                       XK_Down,       focusdir,               {.i = 3 } }, // down
-	{ MODKEY|ControlMask,           XK_j,          pushdown,               {0} },
-	{ MODKEY|ControlMask,           XK_k,          pushup,                 {0} },
 	{ MODKEY,                       XK_i,          incnmaster,             {.i = +1 } },
 	{ MODKEY,                       XK_d,          incnmaster,             {.i = -1 } },
 	{ MODKEY,                       XK_h,          setmfact,               {.f = -0.05} },
@@ -351,7 +355,17 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,                   Button1,        sigstatusbar,   {.i = 1 } },
 	{ ClkStatusText,        0,                   Button2,        sigstatusbar,   {.i = 2 } },
 	{ ClkStatusText,        0,                   Button3,        sigstatusbar,   {.i = 3 } },
-	{ ClkClientWin,         MODKEY,              Button1,        movemouse,      {0} },
+	/* placemouse options, choose which feels more natural:
+	 *    0 - tiled position is relative to mouse cursor
+	 *    1 - tiled postiion is relative to window center
+	 *    2 - mouse pointer warps to window center
+	 *
+	 * The moveorplace uses movemouse or placemouse depending on the floating state
+	 * of the selected client. Set up individual keybindings for the two if you want
+	 * to control these separately (i.e. to retain the feature to move a tiled window
+	 * into a floating position).
+	 */
+	{ ClkClientWin,         MODKEY,              Button1,        moveorplace,    {.i = 1} },
 	{ ClkClientWin,         MODKEY,              Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,              Button3,        resizemouse,    {0} },
 	{ ClkClientWin,         MODKEY|ShiftMask,    Button3,        dragcfact,      {0} },
@@ -360,6 +374,14 @@ static Button buttons[] = {
 	{ ClkTagBar,            0,                   Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,              Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,              Button3,        toggletag,      {0} },
+	{ ClkTabBar,            0,                   Button1,        focuswin,       {0} },
 };
 
+/* signal definitions */
+/* signum must be greater than 0 */
+/* trigger signals using `xsetroot -name "fsignal:<signum>"` */
+static Signal signals[] = {
+	/* signum       function        argument  */
+	{ 1,            setlayout,      {.v = 0} },
+};
 
