@@ -369,4 +369,13 @@ static Button buttons[] = {
 	{ ClkTabBar,            0,                   Button1,        focuswin,       {0} },
 };
 
+/* signal definitions */
+/* signum must be greater than 0 */
+/* trigger signals using `xsetroot -name "fsignal:<signum>"` */
+static Signal signals[] = {
+	/* signum       function        argument  */
+	{ 1,            setlayout,      {.v = 0} },
+};
+
+
 
