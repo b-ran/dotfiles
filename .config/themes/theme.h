@@ -61,6 +61,7 @@ dwm.tags.bg5                   : bar
 dwm.tags.layoutbg              : bar
 
 xmenu.background               : bar
-xmenu.foreground               : text
+xmenu.foreground               : layout
 xmenu.selbackground            : layout
 xmenu.selforeground            : text
+xmenu.borderWidth              : 0
