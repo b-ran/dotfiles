@@ -1,0 +1,42 @@
+@import "../themes/rofi.rasi"
+
+window {
+    background-color: @background;
+    font: @font;
+}
+
+entry {
+    text-color: @foreground;
+    margin: @entry-margin;
+}
+
+prompt {
+    text-color: @background;
+    padding: @prompt-padding;
+    background-color: @focused;
+}
+
+element {
+    border-color: @focused;
+    padding: @element-padding;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+    padding: @element-text-padding;
+}
+
+element-icon {
+    size: @element-icon-size;
+    padding: @element-icon-padding;
+}
+
+element.normal.normal, element.alternate.normal {
+    text-color: @foreground;
+}
+
+element.selected.normal, element.alternate.active, element.selected.active {
+    background-color: @focused;
+    text-color: @background;
+}

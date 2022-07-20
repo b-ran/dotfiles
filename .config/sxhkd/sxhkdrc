@@ -4,4 +4,4 @@ super + Return
 
 # rofi
 super + d
-	rofi -show run
+	rofi -combi-modi "drun,Power Menu:~/dotfiles/scripts/menus/powermenu.sh,window" -theme ~/.config/rofi/combo-modi.rasi -show combi -show-icons -combi-display-format {text} -display-combi "Run"
