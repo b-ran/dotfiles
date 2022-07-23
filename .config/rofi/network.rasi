@@ -1,0 +1,18 @@
+@import "../themes/rofi.rasi"
+@import "combo-modi.rasi"
+
+window {
+    width: @width-network;
+}
+
+prompt {
+    background-color: @focused-network;
+}
+
+element {
+    border-color: @focused-network;
+}
+
+element.selected.normal, element.alternate.active, element.selected.active, element.normal.active {
+    background-color: @focused-network;
+}

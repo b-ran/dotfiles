@@ -137,6 +137,7 @@ static const char *const autostart[] = {
 	"picom", NULL,
 	"dwmblocks", NULL,
 	"udiskie -At", NULL,
+	"nm-applet --indicator", NULL,
 	"coolero", NULL,
 	NULL /* terminate */
 };

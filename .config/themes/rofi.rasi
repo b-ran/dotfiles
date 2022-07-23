@@ -1,4 +1,5 @@
 * {
+    width: 50em;
     background: #282C34;
     background-color: rgba(0, 0, 0, 0%);
     foreground: #FFFFFF;
@@ -11,4 +12,7 @@
     element-text-padding: 0.2em;
     element-icon-size: 1.2em;
     element-icon-padding: 0 0.2em 0 0.2em;
+
+    focused-network: #98C379;
+    width-network: 30em;
 }

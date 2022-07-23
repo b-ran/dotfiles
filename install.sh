@@ -6,7 +6,8 @@ cd paru && makepkg -si --noconfirm
 cd .. && rm -rf paru
 
 # Install packages
-paru -S rofi ttf-jetbrains-mono nerd-fonts-jetbrains-mono pamixer xmenu imlib2 udiskie --noconfirm
+paru -S rofi nm-connection-editor networkmanager-openvpn network-manager-applet networkmanager-dmenu-git \
+        ttf-jetbrains-mono nerd-fonts-jetbrains-mono pamixer xmenu imlib2 udiskie gpick --noconfirm
 
 # Install dwm
 mkdir .config
