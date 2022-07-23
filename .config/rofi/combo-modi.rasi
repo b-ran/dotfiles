@@ -36,7 +36,7 @@ element.normal.normal, element.alternate.normal {
     text-color: @foreground;
 }
 
-element.selected.normal, element.alternate.active, element.selected.active {
+element.selected.normal, element.alternate.active, element.selected.active, element.normal.active {
     background-color: @focused;
     text-color: @background;
 }
