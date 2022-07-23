@@ -8,3 +8,6 @@ super + d
 
 super + n
     networkmanager-dmenu
+
+super + p
+    color-gpick
