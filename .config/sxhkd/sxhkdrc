@@ -11,3 +11,12 @@ super + n
 
 super + p
     color-gpick
+
+super + r
+    ranger
+
+super + t
+    thunar
+
+super + p
+    pavucontrol

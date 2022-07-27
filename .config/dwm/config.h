@@ -139,6 +139,7 @@ static const char *const autostart[] = {
 	"udiskie -At", NULL,
 	"nm-applet --indicator", NULL,
 	"coolero", NULL,
+	"xfsettingsd", NULL,
 	NULL /* terminate */
 };
 
