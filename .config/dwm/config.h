@@ -32,11 +32,11 @@ static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
 
-static const char *fonts[]               = { "JetBrains Mono:style:medium:size=10",
-                                             "JetBrainsMono Nerd Font Mono:size=16"
+static const char *fonts[]               = { "JetBrains Mono:style:medium:size=12",
+                                             "JetBrainsMono Nerd Font Mono:size=18"
                                            };
 
-static const char dmenufont[]            = "JetBrainsMono Nerd Font Mono:style=Medium:size=10";
+static const char dmenufont[]            = "JetBrainsMono Nerd Font Mono:style=Medium:size=12";
 
 static char c000000[]                    = "#000000"; // placeholder value
 
@@ -128,16 +128,16 @@ static char *colors[][ColCount] = {
 };
 
 
-static const char *layoutmenu_cmd = "~/dotfiles/scripts/menus/layoutmenu.sh";
+static const char *layoutmenu_cmd = "~/dotfiles/scripts/menus/layoutmenu";
 
 static const char *const autostart[] = {
 	"bash", ".fehbg", NULL,
-	"xrdb ~/.Xresources", NULL,
+	"xrdb", "~/.Xresources", NULL,
 	"sxhkd", NULL,
 	"picom", NULL,
 	"dwmblocks", NULL,
-	"udiskie -At", NULL,
-	"nm-applet --indicator", NULL,
+	"udiskie", "-At", NULL,
+	"nm-applet", "--indicator", NULL,
 	"coolero", NULL,
 	"xfsettingsd", NULL,
 	NULL /* terminate */

@@ -4,19 +4,13 @@ super + Return
 
 # rofi
 super + d
-	rofi -combi-modi "drun,Power Menu:~/dotfiles/scripts/menus/powermenu.sh,window" -theme ~/.config/rofi/combo-modi.rasi -show combi -show-icons -combi-display-format {text} -display-combi "Run"
+	rofi -combi-modi "drun,Power Menu:~/dotfiles/scripts/menus/powermenu,window" -theme ~/.config/rofi/combo-modi.rasi -show combi -show-icons -combi-display-format \{text\} -display-combi "Run"
 
 super + n
-    networkmanager-dmenu
+    networkmanager_dmenu
 
 super + p
-    color-gpick
-
-super + r
-    ranger
+    ~/dotfiles/scripts/color-gpick
 
 super + t
     thunar
-
-super + p
-    pavucontrol

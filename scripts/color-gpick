@@ -1,0 +1,11 @@
+#!/bin/bash
+color=$(gpick -pso --no-newline)
+
+main() {
+	if [[ "$color" ]]; then
+		echo "$color" | tr -d "\n" | xclip -selection clipboard
+		dunstify -u low --replace=69 -i /usr/share/icons/Papirus-Dark/symbolic/status/notification-symbolic.svg "$color, copied to clipboard."
+	fi
+}
+
+main

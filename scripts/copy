@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ln -s ~/dotfiles/.config/ ~/.config
+sudo ln -s  ~/dotfiles/usr/share/xsessions/ /usr/share/xsessions
+
+cp -srf ~/dotfiles/.Xresources ~/.Xresources
+cp -srf ~/dotfiles/.fehbg ~/.fehbg
+cp -srf ~/dotfilies/etc/pacman.conf ~/.config/pacman.conf

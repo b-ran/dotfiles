@@ -14,7 +14,7 @@ dwm.normfloatcolor             : unfocused
 dwm.selfgcolor                 : null
 dwm.selbgcolor                 : null
 dwm.selbordercolor             : focused
-dwm.selfloatcolor              : null
+dwm.selfloatcolor              : focused
 
 dwm.titlenormfgcolor           : null
 dwm.titlenormbgcolor           : bar

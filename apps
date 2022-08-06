@@ -1,0 +1,34 @@
+#!/bin/bash
+
+PS3='Packages sets - enter choice: '
+options=("Home" "Dev" "Games" "General" "Nvidia" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Home")
+            paru -S coolero discord betterdiscord-installer qbittorrent
+            break
+            ;;
+        "Dev")
+            paru -S keepassxc remmina freerdp docker docker-compose pycharm-professional webstorm python slack-desktop gparted
+            sudo groupadd docker
+            sudo usermod -aG docker "$USER"
+            sudo systemctl enable docker.service
+            sudo systemctl enable containerd.service
+            break
+            ;;
+        "Games")
+            paru -S steam proton lutris bottles
+            break
+            ;;
+        "General")
+            paru -S firefox chromium spotify spotify-tui
+            break
+            ;;
+        "Nvidia")
+            paru -S nvidia nvidia-utils nvidia-settings
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
