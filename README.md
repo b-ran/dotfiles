@@ -1,7 +1,7 @@
 ```
 pacman-key --init
 pacman-key --populate archlinux
-sudo pacman -S archlinux-keyring
+pacman -Sy archlinux-keyring
 archinstall
 ```
 
