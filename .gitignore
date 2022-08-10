@@ -1,1 +1,9 @@
 .idea
+
+.config/dwn/drw.o
+.config/dwn/dwm
+.config/dwn/dwm.o
+.config/dwn/util.o
+.config/dwmblocks/dwmblocks.o
+.config/xmenu/xmenu
+.config/xmenu/xmenu.o
