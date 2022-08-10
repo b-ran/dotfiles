@@ -9,14 +9,15 @@ cd .. && rm -rf paru
 
 # Install packages
 paru -S rofi networkmanager-openvpn network-manager-applet networkmanager-dmenu-git \
-        ttf-jetbrains-mono ttf-ms-fonts nerd-fonts-jetbrains-mono papirus-icon-theme xmenu imlib2 udiskie gpick ly
-#        thunar thunar-archive-plugin tumbler ffmpeg ffmpegthumbnailer gvfs-smb gtk3 gvfs-afc peazip-gtk2-bin ranger ncdu \
-#        pavucontrol alsa-plugins alsa-tools alsa-utils pamixer portaudio wireplumber pipewire-alsa pipewire-jack pipewire-zeroconf pipewire-pulse mpv-git \
-#        unzip tmux rsync openssh zsh nano exa xclip htop gtop neofetch sshfs wget oh-my-zsh-git bat cbonsai viddy shell-color-scripts \
-#        bluez blueberry xfce4-power-manager lxappearance xfce-polkit xfce4-settings --noconfirm
+        ttf-jetbrains-mono ttf-ms-fonts nerd-fonts-jetbrains-mono papirus-icon-theme xmenu imlib2 udiskie gpick \
+        thunar thunar-archive-plugin tumbler ffmpeg ffmpegthumbnailer gvfs-smb gtk3 gvfs-afc peazip-gtk2-bin ranger ncdu \
+        pavucontrol alsa-plugins alsa-tools alsa-utils pamixer portaudio wireplumber pipewire-alsa pipewire-jack pipewire-zeroconf pipewire-pulse mpv-git \
+        unzip tmux rsync openssh zsh nano exa xclip htop gtop neofetch sshfs wget oh-my-zsh-git bat cbonsai viddy shell-color-scripts \
+        bluez blueberry xfce4-power-manager lxappearance xfce-polkit xfce4-settings ly --noconfirm
 
 sudo systemctl enable ly.service
-#sudo systemctl enable bluetooth.service
+sudo systemctl disable getty@tty2.service
+sudo systemctl enable bluetooth.service
 
 # Install dwm
 mkdir .config
