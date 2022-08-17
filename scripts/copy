@@ -2,7 +2,9 @@
 
 sudo ln -s  ~/dotfiles/usr/share/xsessions/ /usr/share/xsessions
 ln -s ~/dotfiles/.config/* ~/.config/
+ln -s ~/dotfiles/.icons/* ~/.icons/
 
 sudo cp -srf ~/dotfiles/etc/pacman.conf /etc/
 cp -srf ~/dotfiles/.Xresources ~/.Xresources
+cp -srf ~/dotfiles/.xprofile ~/.xprofile
 cp -srf ~/dotfiles/.fehbg ~/.fehbg

@@ -15,4 +15,8 @@
 
     focused-network: #98C379;
     width-network: 30em;
+
+    focused-polkit: #C678DD;
+    width-polkit: 30em;
+
 }

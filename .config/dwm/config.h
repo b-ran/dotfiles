@@ -140,6 +140,9 @@ static const char *const autostart[] = {
 	"nm-applet", "--indicator", NULL,
 	"coolero", NULL,
 	"xfsettingsd", NULL,
+	"xfce4-power-manager", NULL,
+	"~/dotfiles/scripts/rofi-polkit-agent",  "~/.config/rofi/polkit.rasi", NULL,
+	"dunst", "-config ~/.config/themes/dunstrc", NULL,
 	NULL /* terminate */
 };
 

@@ -13,4 +13,6 @@ git clone https://github.com/b-ran/dotfiles
 
 ```
 ./dotfiles/apps
+Open lxappearance -> Icons -> Apply Papirus-Dark
 ```
+
