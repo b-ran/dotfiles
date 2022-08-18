@@ -9,11 +9,11 @@ reboot() {
 }
 
 lock() {
-    echo "Locking..."
+  ~/dotfiles/scripts/lock
 }
 
 suspend() {
-   systemctl suspend
+  systemctl suspend
 }
 
 logout() {
@@ -28,21 +28,16 @@ get_options() {
   echo -en "Logout\0icon\x1fsystem-log-out\n"
 }
 
-if [ x"$*" = x"Shutdown" ]
-then
-    shutdown
-elif [ x"$*" = x"Reboot" ]
-then
-    reboot
-elif [ x"$*" = x"Lock" ]
-then
-    lock
-elif [ x"$*" = x"Suspend" ]
-then
-    suspend
-elif [ x"$*" = x"Logout" ]
-then
-    logout
+if [ x"$*" = x"Shutdown" ]; then
+  shutdown
+elif [ x"$*" = x"Reboot" ]; then
+  reboot
+elif [ x"$*" = x"Lock" ]; then
+  lock
+elif [ x"$*" = x"Suspend" ]; then
+  suspend
+elif [ x"$*" = x"Logout" ]; then
+  logout
 fi
 
 get_options

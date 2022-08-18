@@ -1,8 +1,6 @@
-# Terminal
 super + Return
 	alacritty
 
-# rofi
 super + d
 	rofi -combi-modi "drun,Power Menu:~/dotfiles/scripts/menus/powermenu,window" -theme ~/.config/rofi/combo-modi.rasi -show combi -show-icons -combi-display-format \{text\} -display-combi "Run"
 
@@ -14,6 +12,9 @@ super + p
 
 super + t
     thunar
+
+super + l
+    ~/dotfiles/scripts/lock
 
 super + s
     maim -u -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l | xclip -selection clipboard -t image/png
