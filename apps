@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PS3='Packages sets - enter choice: '
-options=("Home" "Dev" "Games" "General" "Nvidia" "Quit")
+options=("Home" "Dev" "Games" "General" "Editing" "Nvidia" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -23,6 +23,10 @@ do
             ;;
         "General")
             paru -Sy firefox chromium spotify spotify-tui
+            break
+            ;;
+        "Editing")
+            paru -Sy gimp inkscape krita
             break
             ;;
         "Nvidia")
