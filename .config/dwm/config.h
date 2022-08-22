@@ -141,8 +141,7 @@ static const char *const autostart[] = {
 	"coolero", NULL,
 	"xfsettingsd", NULL,
 	"xfce4-power-manager", NULL,
-	"~/dotfiles/scripts/rofi-polkit-agent",  "~/.config/rofi/polkit.rasi", NULL,
-	"dunst", "-config ~/.config/themes/dunstrc", NULL,
+	"~/dotfiles/scripts/rofi-polkit-agent", "-theme", "~/.config/rofi/polkit.rasi", NULL,
 	NULL /* terminate */
 };
 
