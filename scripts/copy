@@ -4,6 +4,7 @@ sudo ln -s  ~/dotfiles/usr/share/xsessions/ /usr/share/xsessions
 ln -s ~/dotfiles/.config/* ~/.config/
 ln -s ~/dotfiles/.icons/* ~/.icons/
 
+sudo cp -srf ~/dotfiles/usr/lib/systemd/user/* /usr/lib/systemd/user
 sudo cp -srf ~/dotfiles/etc/pacman.conf /etc/
 sudo cp -srf ~/dotfiles/etc/X11/xorg.conf.d/xorg.conf /etc/X11/xorg.conf.d/xorg.conf
 

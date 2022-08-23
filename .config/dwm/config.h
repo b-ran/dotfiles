@@ -141,7 +141,7 @@ static const char *const autostart[] = {
 	"coolero", NULL,
 	"xfsettingsd", NULL,
 	"xfce4-power-manager", NULL,
-	"~/dotfiles/scripts/rofi-polkit-agent", "-theme", "~/.config/rofi/polkit.rasi", NULL,
+	"/usr/lib/xfce-polkit/xfce-polkit", NULL,
 	NULL /* terminate */
 };
 
@@ -205,7 +205,7 @@ static const Rule rules[] = {
 	 *	WM_WINDOW_ROLE(STRING) = role
 	 *	_NET_WM_WINDOW_TYPE(ATOM) = wintype
 	 */
-	RULE(.class = "Firefox", .tags = 1 << 7)
+	 RULE(.class = "Firefox", .tags = 1 << 7)
 };
 
 
@@ -363,9 +363,9 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,                   Button3,        sigstatusbar,   {.i = 3 } },
 	{ ClkClientWin,         MODKEY,              Button1,        moveorplace,    {.i = 1} },
 	{ ClkClientWin,         MODKEY,              Button2,        togglefloating, {0} },
-	{ ClkClientWin,         MODKEY|ShiftMask,    Button3,        resizemouse,    {0} },
-	{ ClkClientWin,         MODKEY,              Button3,        dragcfact,      {0} },
-	{ ClkClientWin,         MODKEY,              Button1,        dragmfact,      {0} },
+	{ ClkClientWin,         MODKEY,              Button3,        resizemouse,    {0} },
+	{ ClkClientWin,         ControlMask,         Button3,        dragcfact,      {0} },
+	{ ClkClientWin,         ControlMask,         Button1,        dragmfact,      {0} },
 	{ ClkTagBar,            0,                   Button1,        view,           {0} },
 	{ ClkTagBar,            0,                   Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,              Button1,        tag,            {0} },
