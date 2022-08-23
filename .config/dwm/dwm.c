@@ -222,6 +222,7 @@ struct Client {
 	int bw, oldbw;
 	unsigned int tags;
 	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;
+	int needresize;
 	int beingmoved;
 	int issteam;
 	Client *next;
@@ -941,6 +942,8 @@ configurerequest(XEvent *e)
 				configure(c);
 			if (ISVISIBLE(c))
 				XMoveResizeWindow(dpy, c->win, c->x, c->y, c->w, c->h);
+			else
+				c->needresize = 1;
 		} else
 			configure(c);
 	} else {
@@ -1567,6 +1570,8 @@ manage(Window w, XWindowAttributes *wa)
 		setfullscreen(c, 1);
 	updatewmhints(c);
 
+	c->x = c->mon->wx + (c->mon->ww - WIDTH(c)) / 2;
+	c->y = c->mon->wy + (c->mon->wh - HEIGHT(c)) / 2;
 
 	XSelectInput(dpy, w, EnterWindowMask|FocusChangeMask|PropertyChangeMask|StructureNotifyMask);
 	grabbuttons(c, 0);
@@ -2082,11 +2087,9 @@ setfullscreen(Client *c, int fullscreen)
 void
 setlayout(const Arg *arg)
 {
-	if (!arg || !arg->v || arg->v != selmon->lt[selmon->sellt]) {
 		selmon->pertag->sellts[selmon->pertag->curtag] ^= 1;
 		selmon->sellt = selmon->pertag->sellts[selmon->pertag->curtag];
-	}
-	if (arg && arg->v)
+	if (arg && arg->v && arg->v != selmon->lt[selmon->sellt ^ 1])
 		selmon->pertag->ltidxs[selmon->pertag->curtag][selmon->sellt] = (Layout *)arg->v;
 	selmon->lt[selmon->sellt] = selmon->pertag->ltidxs[selmon->pertag->curtag][selmon->sellt];
 
@@ -2234,7 +2237,12 @@ showhide(Client *c)
 		return;
 	if (ISVISIBLE(c)) {
 		/* show clients top down */
-		XMoveWindow(dpy, c->win, c->x, c->y);
+		if (c->needresize) {
+			c->needresize = 0;
+			XMoveResizeWindow(dpy, c->win, c->x, c->y, c->w, c->h);
+		} else {
+			XMoveWindow(dpy, c->win, c->x, c->y);
+		}
 		if ((!c->mon->lt[c->mon->sellt]->arrange || c->isfloating)
 			&& !c->isfullscreen
 			)
@@ -2307,7 +2315,14 @@ tagmon(const Arg *arg)
 	if (!c || !mons->next)
 		return;
 	dest = dirtomon(arg->i);
-	sendmon(c, dest);
+	if (c->isfullscreen) {
+		c->isfullscreen = 0;
+		sendmon(c, dest);
+		c->isfullscreen = 1;
+		resizeclient(c, c->mon->mx, c->mon->my, c->mon->mw, c->mon->mh);
+		XRaiseWindow(dpy, c->win);
+	} else
+		sendmon(c, dest);
 }
 
 void
@@ -2673,7 +2688,7 @@ updatesizehints(Client *c)
 
 	if (!XGetWMNormalHints(dpy, c->win, &size, &msize))
 		/* size is uninitialized, ensure that size.flags aren't used */
-		size.flags = PSize;
+		size.flags = 0;
 	if (size.flags & PBaseSize) {
 		c->basew = size.base_width;
 		c->baseh = size.base_height;
@@ -2705,6 +2720,13 @@ updatesizehints(Client *c)
 		c->maxa = (float)size.max_aspect.x / size.max_aspect.y;
 	} else
 		c->maxa = c->mina = 0.0;
+	if (size.flags & PSize)
+	{
+		c->basew = size.base_width;
+		c->baseh = size.base_height;
+		c->isfloating = 1;
+	}
+	checkfloatingrules(c);
 	c->isfixed = (c->maxw && c->maxh && c->maxw == c->minw && c->maxh == c->minh);
 	c->hintsvalid = 1;
 }
@@ -2762,6 +2784,7 @@ view(const Arg *arg)
 {
 	if ((arg->ui & TAGMASK) == selmon->tagset[selmon->seltags])
 	{
+		view(&((Arg) { .ui = 0 }));
 		return;
 	}
 	tagpreviewswitchtag();

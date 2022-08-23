@@ -29,6 +29,7 @@
 #include "push.h"
 #include "restartsig.h"
 #include "seamless_restart.h"
+#include "sizehints_ruled.h"
 #include "tab.h"
 #include "vanitygaps.h"
 #include "xrdb.h"
