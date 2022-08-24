@@ -27,7 +27,6 @@
 #include "placemouse.c"
 #include "push.c"
 #include "restartsig.c"
-#include "sizehints_ruled.c"
 #include "tab.c"
 #include "vanitygaps.c"
 #include "xrdb.c"

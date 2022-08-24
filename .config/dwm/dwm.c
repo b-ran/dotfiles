@@ -222,7 +222,6 @@ struct Client {
 	int bw, oldbw;
 	unsigned int tags;
 	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;
-	int needresize;
 	int beingmoved;
 	int issteam;
 	Client *next;
@@ -942,8 +941,6 @@ configurerequest(XEvent *e)
 				configure(c);
 			if (ISVISIBLE(c))
 				XMoveResizeWindow(dpy, c->win, c->x, c->y, c->w, c->h);
-			else
-				c->needresize = 1;
 		} else
 			configure(c);
 	} else {
@@ -2237,12 +2234,7 @@ showhide(Client *c)
 		return;
 	if (ISVISIBLE(c)) {
 		/* show clients top down */
-		if (c->needresize) {
-			c->needresize = 0;
-			XMoveResizeWindow(dpy, c->win, c->x, c->y, c->w, c->h);
-		} else {
-			XMoveWindow(dpy, c->win, c->x, c->y);
-		}
+		XMoveWindow(dpy, c->win, c->x, c->y);
 		if ((!c->mon->lt[c->mon->sellt]->arrange || c->isfloating)
 			&& !c->isfullscreen
 			)
@@ -2688,7 +2680,7 @@ updatesizehints(Client *c)
 
 	if (!XGetWMNormalHints(dpy, c->win, &size, &msize))
 		/* size is uninitialized, ensure that size.flags aren't used */
-		size.flags = 0;
+		size.flags = PSize;
 	if (size.flags & PBaseSize) {
 		c->basew = size.base_width;
 		c->baseh = size.base_height;
@@ -2720,13 +2712,6 @@ updatesizehints(Client *c)
 		c->maxa = (float)size.max_aspect.x / size.max_aspect.y;
 	} else
 		c->maxa = c->mina = 0.0;
-	if (size.flags & PSize)
-	{
-		c->basew = size.base_width;
-		c->baseh = size.base_height;
-		c->isfloating = 1;
-	}
-	checkfloatingrules(c);
 	c->isfixed = (c->maxw && c->maxh && c->maxw == c->minw && c->maxh == c->minh);
 	c->hintsvalid = 1;
 }
