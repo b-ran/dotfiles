@@ -14,4 +14,3 @@ git clone https://github.com/b-ran/dotfiles
 ```
 ./dotfiles/apps
 ```
-
