@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo ln -s  ~/dotfiles/usr/share/xsessions/ /usr/share/xsessions
+sudo ln -s  ~/dotfiles/usr/share/xsessions/* /usr/share/xsessions/
 ln -s ~/dotfiles/.config/* ~/.config/
 ln -s ~/dotfiles/.icons/* ~/.icons/
 
