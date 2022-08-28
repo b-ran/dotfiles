@@ -10,7 +10,9 @@ do
             break
             ;;
         "Dev")
-            paru -Sy keepassxc remmina freerdp docker docker-compose pycharm-professional webstorm python slack-desktop gparted
+            paru -Sy keepassxc remmina freerdp docker docker-compose pycharm-professional webstorm python \
+            slack-desktop gparted etcher-bin ventoy-bin
+
             sudo groupadd docker
             sudo usermod -aG docker "$USER"
             sudo systemctl enable docker.service
