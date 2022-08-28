@@ -136,7 +136,7 @@ static const char *const autostart[] = {
 	"xrdb", "~/.Xresources", NULL,
 	"sxhkd", NULL,
 	"picom", NULL,
-//	"dwmblocks", NULL,
+	"dwmblocks", NULL,
 	"udiskie", "-At", NULL,
 	"nm-applet", "--indicator", NULL,
 	"coolero", NULL,
