@@ -11,7 +11,7 @@ do
             ;;
         "Dev")
             paru -Sy keepassxc remmina freerdp docker docker-compose pycharm-professional webstorm python \
-            slack-desktop gparted etcher-bin ventoy-bin
+            slack-desktop gparted gnome-disk-utility etcher-bin ventoy-bin
 
             sudo groupadd docker
             sudo usermod -aG docker "$USER"
