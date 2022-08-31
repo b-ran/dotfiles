@@ -8,3 +8,6 @@
 .config/dwmblocks/dwmblocks
 .config/xmenu/xmenu
 .config/xmenu/xmenu.o
+
+
+.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml
