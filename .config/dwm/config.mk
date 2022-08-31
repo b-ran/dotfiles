@@ -49,7 +49,7 @@ FREETYPEINC = /usr/include/freetype2
 #XCBLIBS = -lX11-xcb -lxcb -lxcb-res
 
 # This is needed for the winicon and tagpreview patches / BAR_WINICON_PATCH / BAR_TAGPREVIEW_PATCH
-IMLIB2LIBS = -lImlib2
+#IMLIB2LIBS = -lImlib2
 
 # Uncomment for the bidi patch
 #BDINC = -I/usr/include/fribidi

@@ -46,6 +46,8 @@
 
 
 
+#include <poll.h>
+
 
 
 /* macros */
@@ -53,7 +55,7 @@
 #define Button7                 7
 #define Button8                 8
 #define Button9                 9
-#define NUMTAGS                 5
+#define NUMTAGS                 9
 #define BARRULES                20
 #define MAXTABS                 50
 #define BUTTONMASK              (ButtonPressMask|ButtonReleaseMask)
@@ -273,9 +275,6 @@ struct Monitor {
 	Bar *bar;
 	const Layout *lt[2];
 	Pertag *pertag;
-	Window tagwin;
-	int previewshow;
-	Pixmap tagmap[NUMTAGS];
 };
 
 typedef struct {
@@ -434,7 +433,7 @@ static void (*handler[LASTEvent]) (XEvent *) = {
 static Atom wmatom[WMLast], netatom[NetLast];
 static Atom xatom[XLast];
 static Atom clientatom[ClientLast];
-static int running = 1;
+static volatile sig_atomic_t running = 1;
 static Cur *cursor[CurLast];
 static Clr **scheme;
 static Display *dpy;
@@ -767,11 +766,6 @@ cleanupmon(Monitor *mon)
 	XUnmapWindow(dpy, mon->tabwin);
 	XDestroyWindow(dpy, mon->tabwin);
 	free(mon->pertag);
-	for (size_t i = 0; i < NUMTAGS; i++)
-		if (mon->tagmap[i])
-			XFreePixmap(dpy, mon->tagmap[i]);
-	XUnmapWindow(dpy, mon->tagwin);
-	XDestroyWindow(dpy, mon->tagwin);
 	free(mon);
 }
 
@@ -1637,8 +1631,6 @@ motionnotify(XEvent *e)
 		return;
 	}
 
-	if (selmon->previewshow != 0)
-		hidetagpreview(selmon);
 
 	if (ev->window != root)
 		return;
@@ -1940,11 +1932,21 @@ void
 run(void)
 {
 	XEvent ev;
-	/* main event loop */
 	XSync(dpy, False);
-	while (running && !XNextEvent(dpy, &ev)) {
+	/* main event loop */
+	while (running) {
+		struct pollfd pfd = {
+			.fd = ConnectionNumber(dpy),
+			.events = POLLIN,
+		};
+		int pending = XPending(dpy) > 0 || poll(&pfd, 1, -1) > 0;
 
+		if (!running)
+			break;
+		if (!pending)
+			continue;
 
+		XNextEvent(dpy, &ev);
 		if (handler[ev.type])
 			handler[ev.type](&ev); /* call handler */
 	}
@@ -2181,7 +2183,6 @@ setup(void)
 
 	updatebars();
 	updatestatus();
-	updatepreview();
 
 	/* supporting window for NetWMCheck */
 	wmcheckwin = XCreateSimpleWindow(dpy, root, 0, 0, 1, 1, 0, 0, 0);
@@ -2268,8 +2269,6 @@ sigchld(int unused)
 void
 spawn(const Arg *arg)
 {
-	if (arg->v == dmenucmd)
-		dmenumon[0] = '0' + selmon->num;
 
 	if (fork() == 0)
 	{
@@ -2369,7 +2368,6 @@ toggleview(const Arg *arg)
 
 
 	if (newtagset) {
-		tagpreviewswitchtag();
 		selmon->tagset[selmon->seltags] = newtagset;
 
 		if (newtagset == ~0)
@@ -2470,7 +2468,7 @@ updatebars(void)
 	XSetWindowAttributes wa = {
 		.override_redirect = True,
 		.background_pixmap = ParentRelative,
-		.event_mask = ButtonPressMask|ExposureMask|PointerMotionMask
+		.event_mask = ButtonPressMask|ExposureMask
 	};
 	XClassHint ch = {"dwm", "dwm"};
 	for (m = mons; m; m = m->next) {
@@ -2766,7 +2764,6 @@ view(const Arg *arg)
 		view(&((Arg) { .ui = 0 }));
 		return;
 	}
-	tagpreviewswitchtag();
 	selmon->seltags ^= 1; /* toggle sel tagset */
 	pertagview(arg);
 	focus(NULL);

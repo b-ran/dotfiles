@@ -9,7 +9,6 @@
 #include "bar_status.c"
 #include "bar_status2d.c"
 #include "bar_statuscmd.c"
-#include "bar_tagpreview.c"
 #include "bar_tags.c"
 #include "bar_systray.c"
 #include "bar_layoutmenu.c"
