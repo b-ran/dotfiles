@@ -55,7 +55,7 @@
 #define Button7                 7
 #define Button8                 8
 #define Button9                 9
-#define NUMTAGS                 9
+#define NUMTAGS                 5
 #define BARRULES                20
 #define MAXTABS                 50
 #define BUTTONMASK              (ButtonPressMask|ButtonReleaseMask)
