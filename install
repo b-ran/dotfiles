@@ -11,7 +11,7 @@ cd .. && rm -rf paru
 paru -S rofi networkmanager-openvpn network-manager-applet networkmanager-dmenu-git \
         ttf-jetbrains-mono ttf-ms-fonts nerd-fonts-jetbrains-mono xmenu imlib2 udiskie gpick \
         thunar thunar-archive-plugin tumbler ffmpeg ffmpegthumbnailer gvfs-smb gtk3 gvfs-afc peazip-gtk2-bin ranger \
-        ncdu lazygit rsync sshfs wget\
+        ncdu lazygit rsync sshfs wget postgresql\
         pavucontrol dunst alsa-plugins alsa-tools alsa-utils pamixer portaudio wireplumber pipewire-alsa pipewire-jack \
         pipewire-zeroconf pipewire-pulse mpv-git \
         unzip xfce-polkit maim tmux openssh zsh nano exa xclip i3lock-color fortune-mod htop gtop \
