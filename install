@@ -15,7 +15,7 @@ paru -S rofi networkmanager-openvpn network-manager-applet networkmanager-dmenu-
         pavucontrol dunst alsa-plugins alsa-tools alsa-utils pamixer portaudio wireplumber pipewire-alsa pipewire-jack \
         pipewire-zeroconf pipewire-pulse mpv-git \
         unzip xfce-polkit maim tmux openssh zsh nano exa xclip i3lock-color fortune-mod htop gtop \
-        neofetch oh-my-zsh-git bat cbonsai viddy shell-color-scripts \
+        neofetch oh-my-zsh-git bat cbonsai viddy shell-color-scripts libnotify net-tools bind \
         bluez blueberry xfce4-power-manager lxappearance xfce4-settings qt6ct xfce4-taskmanager ly \
         papirus-icon-theme arc-gtk-theme phinger-cursors adwaita-icon-theme gtk-update-icon-cache hicolor-icon-theme
 
