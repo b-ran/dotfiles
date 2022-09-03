@@ -1,8 +1,7 @@
 #!/bin/bash
-
-sudo ln -s  ~/dotfiles/usr/share/xsessions/* /usr/share/xsessions/
-ln -s ~/dotfiles/.config/* ~/.config/
-ln -s ~/dotfiles/.icons/* ~/.icons/
+sudo mkdir -p /usr/share/xsessions && sudo ln -s ~/dotfiles/usr/share/xsessions/* /usr/share/xsessions > /dev/null 2>&1
+ln -s ~/dotfiles/.config/* ~/.config/ > /dev/null 2>&1
+ln -s ~/dotfiles/.icons/* ~/.icons/ > /dev/null 2>&1
 
 sudo cp -srf ~/dotfiles/usr/lib/systemd/user/* /usr/lib/systemd/user
 sudo cp -srf ~/dotfiles/etc/pacman.conf /etc/

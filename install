@@ -11,11 +11,11 @@ cd .. && rm -rf paru
 paru -S rofi networkmanager-openvpn network-manager-applet networkmanager-dmenu-git \
         ttf-jetbrains-mono ttf-ms-fonts nerd-fonts-jetbrains-mono xmenu imlib2 udiskie gpick \
         thunar thunar-archive-plugin tumbler ffmpeg ffmpegthumbnailer gvfs-smb gtk3 gvfs-afc peazip-gtk2-bin ranger \
-        ncdu lazygit rsync sshfs wget\
+        ncdu lazygit rsync sshfs wget postgresql\
         pavucontrol dunst alsa-plugins alsa-tools alsa-utils pamixer portaudio wireplumber pipewire-alsa pipewire-jack \
         pipewire-zeroconf pipewire-pulse mpv-git \
         unzip xfce-polkit maim tmux openssh zsh nano exa xclip i3lock-color fortune-mod htop gtop \
-        neofetch oh-my-zsh-git bat cbonsai viddy shell-color-scripts \
+        neofetch oh-my-zsh-git bat cbonsai viddy shell-color-scripts libnotify net-tools bind \
         bluez blueberry xfce4-power-manager lxappearance xfce4-settings qt6ct xfce4-taskmanager ly \
         papirus-icon-theme arc-gtk-theme phinger-cursors adwaita-icon-theme gtk-update-icon-cache hicolor-icon-theme
 
