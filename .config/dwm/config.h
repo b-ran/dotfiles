@@ -132,6 +132,7 @@ static const char *layoutmenu_cmd = "~/dotfiles/scripts/menus/layoutmenu";
 
 static const char *const autostart[] = {
 	"bash", ".fehbg", NULL,
+        "alacritty", NULL,
 	"xrdb", "~/.Xresources", NULL,
 	"sxhkd", NULL,
 	"picom", NULL,
