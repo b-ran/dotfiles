@@ -10,7 +10,7 @@ do
             break
             ;;
         "Dev")
-            paru -Sy keepassxc remmina freerdp docker docker-compose pycharm-professional webstorm python \
+            paru -Sy keepassxc remmina freerdp docker docker-compose pycharm-professional webstorm python python-pip\
             slack-desktop gparted gnome-disk-utility etcher-bin ventoy-bin
 
             sudo groupadd docker

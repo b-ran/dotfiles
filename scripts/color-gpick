@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
 color=$(gpick -pso --no-newline)
 
 main() {

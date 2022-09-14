@@ -33,7 +33,7 @@ static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
 
 static const char *fonts[]               = { "JetBrains Mono:style:medium:size=10",
-                                             "JetBrainsMono Nerd Font Mono:size=12"
+                                             "JetBrainsMono Nerd Font Mono:size=16"
                                            };
 
 static const char dmenufont[]            = "JetBrainsMono Nerd Font Mono:style=Medium:size=12";
