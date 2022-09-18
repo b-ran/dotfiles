@@ -4,3 +4,4 @@ Comment=Removable media auto mounter
 Exec=/usr/bin/udiskie -At
 Terminal=false
 Type=Application
+StartupNotify=false
