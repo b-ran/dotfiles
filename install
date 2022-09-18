@@ -9,7 +9,7 @@ cd .. && rm -rf paru
 
 # Install packages
 paru -S rofi networkmanager-openvpn network-manager-applet networkmanager-dmenu-git \
-        ttf-jetbrains-mono ttf-ms-fonts nerd-fonts-jetbrains-mono xmenu imlib2 udiskie gpick \
+        ttf-jetbrains-mono ttf-symbola ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-emoji xmenu imlib2 udiskie gpick \
         thunar thunar-archive-plugin tumbler ffmpeg ffmpegthumbnailer gvfs-smb gtk3 gvfs-afc peazip-gtk2-bin ranger \
         ncdu lazygit rsync sshfs wget postgresql\
         pavucontrol dunst alsa-plugins alsa-tools alsa-utils pamixer portaudio wireplumber pipewire-alsa pipewire-jack \
