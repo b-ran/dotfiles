@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PS3='Packages sets - enter choice: '
-options=("Home" "Dev" "Games" "General" "Editing" "Nvidia" "Quit")
+options=("Home" "Dev" "Games" "General" "Editing" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -22,19 +22,15 @@ do
             break
             ;;
         "Games")
-            paru -Sy steam lutris bottles
+            paru -Sy steam lutris bottles nvidia-settings
             break
             ;;
         "General")
-            paru -Sy firefox chromium spotify spotify-tui
+            paru -Sy firefox chromium spotify spotify-tui-bin
             break
             ;;
         "Editing")
             paru -Sy gimp inkscape krita
-            break
-            ;;
-        "Nvidia")
-            paru -Sy nvidia nvidia-utils nvidia-settings
             break
             ;;
         *) echo "invalid option $REPLY";;

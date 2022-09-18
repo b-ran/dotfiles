@@ -132,17 +132,11 @@ static const char *layoutmenu_cmd = "~/dotfiles/scripts/menus/layoutmenu";
 
 static const char *const autostart[] = {
 	"bash", ".fehbg", NULL,
-        "alacritty", NULL,
-	"xrdb", "~/.Xresources", NULL,
 	"sxhkd", NULL,
-	"picom", NULL,
+	"dex", "-a", NULL,
+    "alacritty", NULL,
+	"xrdb", "~/.Xresources", NULL,
 	"dwmblocks", NULL,
-	"udiskie", "-At", NULL,
-	"nm-applet", "--indicator", NULL,
-	"coolero", NULL,
-	"xfsettingsd", NULL,
-	"xfce4-power-manager", NULL,
-	"/usr/lib/xfce-polkit/xfce-polkit", NULL,
 	NULL /* terminate */
 };
 
