@@ -7,7 +7,7 @@ archinstall
 
 ```
 sudo pacman -Sy git
-git clone https://github.com/b-ran/dotfiles
+git clone git@github.com:b-ran/dotfiles.git
 ./dotfiles/install
 ```
 
