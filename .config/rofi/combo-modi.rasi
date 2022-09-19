@@ -1,5 +1,9 @@
 @import "../themes/rofi.rasi"
 
+configuration {
+    modes: "combi";
+}
+
 window {
     background-color: @background;
     width: @width;
