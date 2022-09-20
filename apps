@@ -6,11 +6,11 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Home")
-            paru -Sy coolero discord betterdiscord-installer qbittorrent
+            paru -Sy --needed  coolero discord betterdiscord-installer qbittorrent
             break
             ;;
         "Dev")
-            paru -Sy keepassxc remmina freerdp docker docker-compose pycharm-professional webstorm webstorm-jre python python-pip\
+            paru -Sy --needed keepassxc remmina freerdp docker docker-compose pycharm-professional webstorm webstorm-jre python python-pip\
             npm slack-desktop gparted gnome-disk-utility etcher-bin ventoy-bin kubectl helm kubectx kubens k9s kubetail \
 
             sudo groupadd docker
@@ -22,15 +22,15 @@ do
             break
             ;;
         "Games")
-            paru -Sy steam lutris bottles nvidia-settings
+            paru -Sy --needed  steam lutris bottles nvidia-settings
             break
             ;;
         "General")
-            paru -Sy firefox chromium spotify spotify-tui-bin
+            paru -Sy --needed firefox chromium spotify spotify-tui-bin
             break
             ;;
         "Editing")
-            paru -Sy gimp inkscape krita
+            paru -Sy --needed gimp inkscape krita
             break
             ;;
         *) echo "invalid option $REPLY";;
