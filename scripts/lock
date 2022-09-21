@@ -9,7 +9,7 @@ GREETER=$(fortune -n 90 -s | head -n 1)
 # shellcheck disable=SC2154
 (
   i3lock \
-    --color="${bg}D9" \
+    --color="${bg}" \
     --insidever-color="${success}" \
     --insidewrong-color="${error}" \
     --inside-color="${bg}00" \
