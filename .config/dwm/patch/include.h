@@ -28,6 +28,7 @@
 #include "push.h"
 #include "restartsig.h"
 #include "seamless_restart.h"
+#include "swallow.h"
 #include "tab.h"
 #include "togglefullscreen.h"
 #include "vanitygaps.h"

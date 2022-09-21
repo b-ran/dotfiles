@@ -10,4 +10,14 @@ alias jobfiles='cd ~/jobfiles'
 alias build-dwm='cd ~/.config/dwm && sudo make clean install && cd -'
 alias build-dwmblocks='cd ~/.config/dwmblocks && sudo make clean install && cd -'
 
+flexipatch() {
+  dotfiles
+  rm -rf ~/dotfiles/.config/dwm
+  flexipatch-finalizer -r -d ~/dotfiles/dwm/dwm-flexipatch -o ~/dotfiles/.config/dwm
+  git checkout ~/dotfiles/.config/dwm/config.h
+  cd - || exit
+}
+
+
+
 

@@ -3,6 +3,7 @@
 /* appearance */
 static const unsigned int borderpx       = 1;   /* border pixel of windows */
 static const unsigned int snap           = 32;  /* snap pixel */
+static const int swallowfloating         = 0;   /* 1 means swallow floating windows by default */
 static const unsigned int gappih         = 10;  /* horiz inner gap between windows */
 static const unsigned int gappiv         = 10;  /* vert inner gap between windows */
 static const unsigned int gappoh         = 10;  /* horiz outer gap between windows and screen edge */
@@ -32,7 +33,7 @@ static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
 
-static const char *fonts[]               = { "JetBrains Mono:style:medium:size=10",
+static const char *fonts[]               = { "JetBrains Mono:style:medium:size=12",
                                              "JetBrainsMono Nerd Font Mono:size=16"
                                            };
 
@@ -134,7 +135,6 @@ static const char *const autostart[] = {
 	"bash", ".fehbg", NULL,
 	"sxhkd", NULL,
 	"dex", "-a", NULL,
-    "alacritty", NULL,
 	"xrdb", "~/.Xresources", NULL,
 	"dwmblocks", NULL,
 	NULL /* terminate */
@@ -170,9 +170,9 @@ static const char *const autostart[] = {
  */
 static char *tagicons[][NUMTAGS] =
 {
-	[DEFAULT_TAGS]        = { "", "", "", "", ""},
-	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E"},
-	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>" },
+	[DEFAULT_TAGS]        = { "", "", "", ""},
+	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D"},
+	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>"},
 };
 
 
@@ -202,6 +202,10 @@ static const Rule rules[] = {
 	 *	_NET_WM_WINDOW_TYPE(ATOM) = wintype
 	 */
 	 RULE(.class = "Firefox", .tags = 1 << 7)
+
+	 RULE(.class = "Gpick", .isfloating = 1, .iscentered = 1)
+	 RULE(.class = "Lxappearance", .isfloating = 1, .iscentered = 1)
+	 RULE(.class = "Xfce-polkit", .isfloating = 1, .iscentered = 1)
 };
 
 
@@ -272,7 +276,7 @@ static const char *dmenucmd[] = {
 	"-sf", selfgcolor,
 	NULL
 };
-static const char *termcmd[]  = { "bash", NULL };
+static const char *termcmd[]  = { "zsh", NULL };
 
 /* This defines the name of the executable that handles the bar (used for signalling purposes) */
 #define STATUSBAR "dwmblocks"

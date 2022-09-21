@@ -26,6 +26,7 @@
 #include "placemouse.c"
 #include "push.c"
 #include "restartsig.c"
+#include "swallow.c"
 #include "tab.c"
 #include "togglefullscreen.c"
 #include "vanitygaps.c"
