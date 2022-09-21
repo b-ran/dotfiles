@@ -37,8 +37,3 @@ export date_ic_fg=$bg
 export date_ic_bg=#56B6C2
 export date_fg=$date_ic_bg
 export date_bg=$bg
-
-export uptime_ic_fg=$bg
-export uptime_ic_bg=#ABB2BF
-export uptime_fg=$uptime_ic_bg
-export uptime_bg=$bg

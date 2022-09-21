@@ -6,4 +6,7 @@ Xft.hintstyle:	hintslight
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 
+Xcursor.theme: phinger-cursors
+Xcursor.size: 32
+
 #include ".config/themes/theme.h"

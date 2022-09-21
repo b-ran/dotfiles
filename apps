@@ -6,12 +6,12 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Home")
-            paru -Sy --needed  coolero discord betterdiscord-installer qbittorrent
+            paru -Sy --needed  coolero discord betterdiscord-installer-bin qbittorrent
             break
             ;;
         "Dev")
             paru -Sy --needed keepassxc remmina freerdp docker docker-compose pycharm-professional webstorm webstorm-jre python python-pip\
-            npm slack-desktop gparted gnome-disk-utility etcher-bin ventoy-bin kubectl helm kubectx kubens k9s kubetail \
+            npm slack-desktop gparted gnome-disk-utility etcher-bin ventoy-bin kubectl helm kubectx kubens k9s kubetail
 
             sudo groupadd docker
             sudo usermod -aG docker "$USER"

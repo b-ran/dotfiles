@@ -6,7 +6,6 @@ static const Block blocks[] = {
 	{"", "~/dotfiles/scripts/blocks/memory",      3,  0},
 	{"", "~/dotfiles/scripts/blocks/storage",     3,  0},
 	{"", "~/dotfiles/scripts/blocks/time",        3,  0},
-	{"", "~/dotfiles/scripts/blocks/uptime",      30, 0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.

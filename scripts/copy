@@ -12,4 +12,5 @@ sudo cp -srf ~/dotfiles/etc/X11/xorg.conf.d/xorg.conf /etc/X11/xorg.conf.d/xorg.
 cp -srf ~/dotfiles/.Xresources ~/.Xresources
 cp -srf ~/dotfiles/.xprofile ~/.xprofile
 cp -srf ~/dotfiles/.fehbg ~/.fehbg
+cp -srf ~/dotfiles/.bashrc ~/.bashrc
 cp -srf ~/dotfiles/.zshrc ~/.zshrc
