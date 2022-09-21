@@ -5,3 +5,9 @@ alias k=kubectl
 alias dstop='docker stop $(docker ps -a -q) 2>/dev/null'
 alias cat='bat'
 
+alias dotfiles='cd ~/dotfiles'
+alias jobfiles='cd ~/jobfiles'
+alias build-dwm='cd ~/.config/dwm && sudo make clean install && cd -'
+alias build-dwmblocks='cd ~/.config/dwmblocks && sudo make clean install && cd -'
+
+
