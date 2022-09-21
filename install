@@ -11,7 +11,7 @@ cd .. && rm -rf paru
 ~/dotfiles/packages
 
 mkdir .config
-~/dotfiles/scripts/copy
+~/dotfiles/bin/copy-dotfiles
 
 sudo systemctl enable ly.service
 sudo systemctl enable bluetooth.service
