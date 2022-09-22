@@ -4,6 +4,10 @@ alias reload='source ~/.zshrc'
 alias k=kubectl
 alias dstop='docker stop $(docker ps -a -q) 2>/dev/null'
 alias cat='bat'
+alias lz='lazygit'
+alias ls='exa -l'
+alias l='exa'
+alias watch='viddy'
 
 alias dotfiles='cd ~/dotfiles'
 alias jobfiles='cd ~/jobfiles'

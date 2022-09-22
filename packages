@@ -1,14 +1,64 @@
 #!/bin/bash
 
-paru -S --needed rofi networkmanager-openvpn network-manager-applet networkmanager-dmenu-git \
-        ttf-jetbrains-mono ttf-symbola ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-emoji xmenu imlib2 udiskie gpick \
-        thunar thunar-archive-plugin tumbler ffmpeg ffmpegthumbnailer gvfs-smb gtk3 gvfs-afc peazip-gtk2-bin ranger \
-        ncdu lazygit rsync sshfs wget postgresql jre-openjdk\
-        pavucontrol dunst alsa-plugins alsa-tools alsa-utils pamixer portaudio wireplumber pipewire-alsa pipewire-jack \
-        pipewire-zeroconf pipewire-pulse mpv-git \
-        unzip xfce-polkit maim tmux openssh zsh nano exa xclip i3lock-color fortune-mod htop gtop \
-        neofetch oh-my-zsh-git zsh-syntax-highlighting-git zsh-autosuggestions-git zsh-completions-git  bat cbonsai viddy shell-color-scripts libnotify net-tools bind \
-        bluez blueberry xfce4-power-manager lxappearance xfce4-settings qt6ct xfce4-taskmanager ly \
-        papirus-icon-theme arc-gtk-theme phinger-cursors adwaita-icon-theme gtk-update-icon-cache hicolor-icon-theme
+#####################
+#### Environment ####
+#####################
+
+paru -S --needed rofi dunst xfce-polkit i3lock-color maim xfce4-power-manager  xfce4-settings  xfce4-taskmanager ly \
+        dunst
+
+###################
+#### Libraries ####
+###################
+
+paru -S --needed postgresql jre-openjdk xmenu imlib2 libnotify
 
 
+##################
+#### Terminal ####
+##################
+
+paru -S --needed neofetch oh-my-zsh-git zsh-syntax-highlighting-git zsh-autosuggestions-git zsh-completions-git bat \
+        cbonsai viddy shell-color-scripts zsh nano exa xclip fortune-mod htop gtop unzip ranger ncdu lazygit rsync \
+        sshfs wget tmux openssh gpick cava
+
+
+###############
+#### Files ####
+###############
+
+paru -S --needed thunar thunar-archive-plugin tumbler peazip-gtk2-bin udiskie  gvfs-smb  gvfs-afc
+
+#################
+#### Theming ####
+#################
+
+paru -S --needed papirus-icon-theme arc-gtk-theme phinger-cursors adwaita-icon-theme gtk-update-icon-cache \
+        hicolor-icon-theme lxappearance qt6ct gtk3
+
+###############
+#### Fonts ####
+###############
+
+paru -S --needed ttf-jetbrains-mono ttf-symbola ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-emoji \
+        papirus-icon-theme arc-gtk-theme phinger-cursors adwaita-icon-theme gtk-update-icon-cache hicolor-icon-theme \
+
+
+###################
+#### Bluetooth ####
+###################
+
+paru -S --needed  bluez blueberry
+
+####################
+#### Networking ####
+####################
+
+paru -S --needed networkmanager-openvpn network-manager-applet networkmanager-dmenu-git net-tools bind
+
+####################
+#### Multimedia ####
+####################
+
+paru -S --needed mpv ffmpeg ffmpegthumbnailer alsa-plugins alsa-tools alsa-utils pamixer portaudio wireplumber \
+        pipewire-alsa pipewire-jack pipewire-zeroconf pipewire-pulse mpv pavucontrol

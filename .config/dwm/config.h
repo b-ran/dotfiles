@@ -33,7 +33,7 @@ static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
 
-static const char *fonts[]               = { "JetBrains Mono:style:medium:size=12",
+static const char *fonts[]               = { "JetBrains Mono:style:medium:size=10",
                                              "JetBrainsMono Nerd Font Mono:size=16"
                                            };
 
@@ -206,6 +206,7 @@ static const Rule rules[] = {
 	 RULE(.class = "Gpick", .isfloating = 1, .iscentered = 1)
 	 RULE(.class = "Lxappearance", .isfloating = 1, .iscentered = 1)
 	 RULE(.class = "Xfce-polkit", .isfloating = 1, .iscentered = 1)
+	 RULE(.class = "Alacritty", .isterminal = 1)
 };
 
 
