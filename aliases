@@ -9,6 +9,8 @@ alias ls='exa -l'
 alias l='exa'
 alias watch='viddy'
 
+alias gp='git push'
+
 alias dotfiles='cd ~/dotfiles'
 alias jobfiles='cd ~/jobfiles'
 alias build-dwm='cd ~/.config/dwm && sudo make clean install && cd -'
