@@ -13,6 +13,11 @@ element {
     border-color: @focused-network;
 }
 
-element.selected.normal, element.alternate.active, element.selected.active, element.normal.active {
+element.normal.active, element.selected.normal, element.selected.active {
     background-color: @focused-network;
+}
+
+element.alternate.active {
+    text-color: @background;
+    background-color: @focused;
 }
