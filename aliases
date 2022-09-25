@@ -8,6 +8,8 @@ alias lz='lazygit'
 alias ls='exa -l'
 alias l='exa'
 alias watch='viddy'
+alias cava='cava -p ~/.config/themes/cava'
+alias pkg-find='paru -Ql'
 
 alias gp='git push'
 

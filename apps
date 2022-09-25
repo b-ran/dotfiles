@@ -26,7 +26,7 @@ do
             break
             ;;
         "General")
-            paru -Sy --needed firefox chromium spotify spotify-tui-bin
+            paru -Sy --needed firefox chromium spotify
             break
             ;;
         "Editing")
