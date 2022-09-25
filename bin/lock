@@ -47,4 +47,4 @@ GREETER=$(fortune -n 90 -s | head -n 1)
     -n
   xset s off -dpms
 ) &
-xset dpms 0 0 15
+xset dpms 0 0 60
