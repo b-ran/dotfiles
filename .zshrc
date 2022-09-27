@@ -3,6 +3,10 @@ colorscript --random
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/dotfiles/bin:$PATH"
+export PATH="$HOME/jobfiles/bin:$PATH"
+
 # Path to your oh-my-zsh installation.
 export ZSH="/usr/share/oh-my-zsh"
 
@@ -78,6 +82,8 @@ plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 source ~/dotfiles/aliases
+source ~/jobfiles/aliases
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source <(kubectl completion zsh)
