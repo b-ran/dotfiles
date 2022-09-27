@@ -20,7 +20,7 @@ paru -S --needed postgresql jre-openjdk xmenu imlib2 libnotify
 
 paru -S --needed neofetch oh-my-zsh-git zsh-syntax-highlighting-git zsh-autosuggestions-git zsh-completions-git bat \
         cbonsai viddy shell-color-scripts zsh nano exa xclip fortune-mod htop gtop unzip ranger ncdu lazygit rsync \
-        sshfs wget tmux openssh gpick cava starship
+        sshfs wget tmux openssh gpick cava starship vi
 
 
 ###############
