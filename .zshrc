@@ -87,4 +87,6 @@ source ~/jobfiles/aliases
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 source <(kubectl completion zsh)
+eval "$(starship init zsh)"
