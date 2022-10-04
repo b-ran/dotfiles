@@ -42,6 +42,7 @@ paru -S --needed papirus-icon-theme arc-gtk-theme phinger-cursors adwaita-icon-t
 
 paru -S --needed ttf-jetbrains-mono ttf-symbola ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-emoji \
         papirus-icon-theme arc-gtk-theme phinger-cursors adwaita-icon-theme gtk-update-icon-cache hicolor-icon-theme \
+        noto-fonts-cjk
 
 
 ###################
