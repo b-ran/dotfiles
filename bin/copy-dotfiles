@@ -5,12 +5,7 @@ ln -s ~/dotfiles/.icons/* ~/.icons/ > /dev/null 2>&1
 
 sudo cp -srf ~/dotfiles/etc/pacman.conf /etc/
 
-sudo rm -rf /etc/xdg/autostart
-sudo ln -s ~/dotfiles/etc/xdg/autostart /etc/xdg/
-sudo cp -srf ~/dotfiles/etc/X11/xorg.conf.d/xorg.conf /etc/X11/xorg.conf.d/xorg.conf
-
 cp -srf ~/dotfiles/.Xresources ~/.Xresources
 cp -srf ~/dotfiles/.xprofile ~/.xprofile
 cp -srf ~/dotfiles/.fehbg ~/.fehbg
-cp -srf ~/dotfiles/.bashrc ~/.bashrc
 cp -srf ~/dotfiles/.zshrc ~/.zshrc

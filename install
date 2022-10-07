@@ -1,14 +1,15 @@
 #!/bin/bash
 
-sudo pacman -S --needed base-devel xorg xorg-xinit xorg-xrdb picom archlinux-keyring alacritty sxhkd feh
+sudo pacman -S --needed base-devel xorg xorg-xinit xorg-xrdb picom archlinux-keyring alacritty sxhkd feh dex
 
 # Install aur helper -- paru
-git clone https://aur.archlinux.org/paru.gitbat
+git clone https://aur.archlinux.org/paru.git
 cd paru && makepkg -si
 cd .. && rm -rf paru
 
 # Install packages
 ~/dotfiles/packages
+chsh -s /bin/zsh
 
 mkdir .config
 ~/dotfiles/bin/copy-dotfiles

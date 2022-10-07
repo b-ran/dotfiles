@@ -1,5 +1,13 @@
 #!/bin/bash
 
+###############
+#### Fonts ####
+###############
+
+paru -S --needed ttf-jetbrains-mono ttf-symbola ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-emoji \
+        papirus-icon-theme arc-gtk-theme phinger-cursors adwaita-icon-theme gtk-update-icon-cache hicolor-icon-theme \
+        noto-fonts-cjk
+
 #####################
 #### Environment ####
 #####################
@@ -35,14 +43,6 @@ paru -S --needed thunar thunar-archive-plugin tumbler peazip-gtk2-bin udiskie  g
 
 paru -S --needed papirus-icon-theme arc-gtk-theme phinger-cursors adwaita-icon-theme gtk-update-icon-cache \
         hicolor-icon-theme lxappearance qt6ct gtk3
-
-###############
-#### Fonts ####
-###############
-
-paru -S --needed ttf-jetbrains-mono ttf-symbola ttf-ms-fonts nerd-fonts-jetbrains-mono noto-fonts-emoji \
-        papirus-icon-theme arc-gtk-theme phinger-cursors adwaita-icon-theme gtk-update-icon-cache hicolor-icon-theme \
-        noto-fonts-cjk
 
 
 ###################

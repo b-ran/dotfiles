@@ -6,12 +6,12 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Home")
-            paru -Sy --needed  coolero discord betterdiscord-installer-bin qbittorrent
+            paru -Sy --needed coolero betterdiscord-installer-bin qbittorrent
             break
             ;;
         "Dev")
             paru -Sy --needed keepassxc remmina freerdp docker docker-compose pycharm-professional webstorm webstorm-jre python python-pip\
-            npm slack-desktop gparted gnome-disk-utility etcher-bin ventoy-bin kubectl helm kubectx kubens k9s kubetail dive
+            npm slack-desktop gparted gnome-disk-utility etcher-bin ventoy-bin kubectl helm kubectx kubens k9s kubetail dive-bin
 
             sudo groupadd docker
             sudo usermod -aG docker "$USER"
@@ -22,11 +22,11 @@ do
             break
             ;;
         "Games")
-            paru -Sy --needed  steam lutris bottles nvidia-settings
+            paru -Sy --needed steam lutris bottles nvidia-settings
             break
             ;;
         "General")
-            paru -Sy --needed firefox chromium spotify
+            paru -Sy --needed firefox discord chromium spotify
             break
             ;;
         "Editing")
