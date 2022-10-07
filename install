@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo pacman -S --needed base-devel xorg xorg-xinit xorg-xrdb picom archlinux-keyring alacritty sxhkd feh dex
+grub-mkconfig -o /boot/grub/grub.cfg
 
 # Install aur helper -- paru
 git clone https://aur.archlinux.org/paru.git
