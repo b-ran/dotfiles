@@ -10,7 +10,6 @@ cd .. && rm -rf paru
 
 # Install packages
 ~/dotfiles/packages
-chsh -s /bin/zsh
 
 mkdir .config
 ~/dotfiles/bin/copy-dotfiles
@@ -22,3 +21,4 @@ sudo systemctl --user start dunst.service
 cd ~/.config/dwm && sudo make install
 cd ~/.config/dwmblocks && sudo make install
 cd ~/.config/xmenu && sudo make install
+chsh -s /bin/zsh
