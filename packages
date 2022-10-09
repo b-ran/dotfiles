@@ -1,5 +1,7 @@
 #!/bin/bash
 
+paru
+
 ###############
 #### Fonts ####
 ###############
@@ -19,7 +21,7 @@ paru -S --needed rofi dunst xfce-polkit i3lock-color maim xfce4-power-manager  x
 #### Libraries ####
 ###################
 
-paru -S --needed postgresql jre-openjdk xmenu imlib2 libnotify
+paru -S --needed postgresql jre-openjdk imlib2 libnotify
 
 
 ##################
