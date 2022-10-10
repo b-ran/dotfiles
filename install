@@ -21,4 +21,6 @@ sudo systemctl --user start dunst.service
 cd ~/.config/dwm && sudo make install
 cd ~/.config/dwmblocks && sudo make install
 cd ~/.config/xmenu && sudo make install
+
+cd ~/dotfiles && git submodule update --init --recursive && git remote set-url origin git@github.com:b-ran/dotfiles.git && cd -
 chsh -s /bin/zsh
