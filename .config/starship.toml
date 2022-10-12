@@ -35,3 +35,11 @@ style = 'yellow'
 
 [directory]
 truncation_length = 8
+
+[hostname]
+ssh_only = true
+format = "[$ssh_symbol](bold blue) [$hostname](bold red)"
+disabled = false
+
+[username]
+disabled = true
