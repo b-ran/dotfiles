@@ -1,1 +1,2 @@
-feh --no-fehbg --bg-scale "$HOME/.config/themes/wallpaper.png"
+#!/bin/sh
+feh --no-fehbg --bg-scale ~/.config/themes/wallpaper.png
