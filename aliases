@@ -21,6 +21,7 @@ alias dotfiles='cd ~/dotfiles'
 alias jobfiles='cd ~/jobfiles'
 alias build-dwm='cd ~/.config/dwm && sudo make clean install && cd -'
 alias build-dwmblocks='cd ~/.config/dwmblocks && sudo make clean install && cd -'
+alias reload-wallpaper='feh --no-fehbg --bg-scale ~/.config/themes/wallpaper.png'
 
 flexipatch() {
   dotfiles
