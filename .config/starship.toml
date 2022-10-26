@@ -1,5 +1,7 @@
 format = "$time$all$username$directory$character"
 
+[aws]
+disabled = true
 
 [nodejs]
 format = '[$symbol]($style)'
@@ -43,3 +45,6 @@ disabled = false
 
 [username]
 disabled = true
+
+[kubernetes]
+disabled = false
