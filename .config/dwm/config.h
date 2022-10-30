@@ -206,6 +206,7 @@ static const Rule rules[] = {
 	 RULE(.class = "Gpick", .isfloating = 1, .iscentered = 1)
 	 RULE(.class = "Lxappearance", .isfloating = 1, .iscentered = 1)
 	 RULE(.class = "Xfce-polkit", .isfloating = 1, .iscentered = 1)
+	 RULE(.class = "nm-connection-editor", .isfloating = 1, .iscentered = 1)
 	 RULE(.class = "Alacritty", .isterminal = 1)
 };
 

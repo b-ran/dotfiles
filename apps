@@ -11,7 +11,7 @@ do
             ;;
         "Dev")
             paru -Sy --needed keepassxc remmina freerdp docker docker-compose pycharm-professional webstorm webstorm-jre python python-pip\
-            npm slack-desktop gparted gnome-disk-utility etcher-bin ventoy-bin kubectl helm kubectx kubens k9s kubetail dive-bin kops-git aws-cli
+            npm slack-desktop gparted gnome-disk-utility etcher-bin ventoy-bin kubectl helm kubectx kubens k9s kubetail dive-bin kops-git aws-cli apache-tools
 
             sudo groupadd docker
             sudo usermod -aG docker "$USER"
