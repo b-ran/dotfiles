@@ -14,7 +14,7 @@ paru -S --needed ttf-jetbrains-mono ttf-symbola ttf-ms-fonts nerd-fonts-jetbrain
 #### Environment ####
 #####################
 
-paru -S --needed rofi dunst xfce-polkit i3lock-color maim xfce4-power-manager  xfce4-settings  xfce4-taskmanager ly \
+paru -S --needed rofi dunst xfce-polkit i3lock-color maim xfce4-power-manager xfce4-settings xfce4-taskmanager ly \
         dunst
 
 ###################
@@ -37,7 +37,7 @@ paru -S --needed neofetch oh-my-zsh-git zsh-syntax-highlighting-git zsh-autosugg
 #### Files ####
 ###############
 
-paru -S --needed thunar thunar-archive-plugin tumbler peazip-gtk2-bin udiskie  gvfs-smb  gvfs-afc
+paru -S --needed thunar thunar-archive-plugin tumbler peazip-gtk2-bin udiskie gvfs-smb gvfs-afc
 
 #################
 #### Theming ####
@@ -51,7 +51,13 @@ paru -S --needed papirus-icon-theme arc-gtk-theme phinger-cursors adwaita-icon-t
 #### Bluetooth ####
 ###################
 
-paru -S --needed  bluez blueberry
+paru -S --needed bluez blueberry
+
+###############
+#### Tools ####
+###############
+
+paru -S --needed solaar
 
 ####################
 #### Networking ####

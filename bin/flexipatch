@@ -1,0 +1,7 @@
+#!/usr/bin/zsh
+
+dotfiles
+rm -rf ~/dotfiles/.config/dwm
+flexipatch-finalizer -r -d ~/dotfiles/dwm/dwm-flexipatch -o ~/dotfiles/.config/dwm
+git checkout ~/dotfiles/.config/dwm/config.h
+cd - || exit

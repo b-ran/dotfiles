@@ -4,7 +4,7 @@ alias reload='source ~/.zshrc'
 alias k=kubectl
 alias dstop='docker stop $(docker ps -a -q) 2>/dev/null'
 alias cat='bat'
-alias bat='cat'
+alias ccat='cat'
 alias lg='lazygit'
 alias ls='exa -l'
 alias l='exa'
@@ -22,15 +22,3 @@ alias jobfiles='cd ~/jobfiles'
 alias build-dwm='cd ~/.config/dwm && sudo make clean install && cd -'
 alias build-dwmblocks='cd ~/.config/dwmblocks && sudo make clean install && cd -'
 alias reload-wallpaper='feh --no-fehbg --bg-scale ~/.config/themes/wallpaper.png'
-
-flexipatch() {
-  dotfiles
-  rm -rf ~/dotfiles/.config/dwm
-  flexipatch-finalizer -r -d ~/dotfiles/dwm/dwm-flexipatch -o ~/dotfiles/.config/dwm
-  git checkout ~/dotfiles/.config/dwm/config.h
-  cd - || exit
-}
-
-
-
-
