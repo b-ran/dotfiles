@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=coolero
-Comment=Fan contoller
-Exec=/usr/bin/coolero
-Terminal=false
-Type=Application
-StartupNotify=false
