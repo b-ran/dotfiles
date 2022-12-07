@@ -6,7 +6,7 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Home")
-            paru -Sy --needed coolero betterdiscord-installer-bin qbittorrent-qt5
+            paru -Sy --needed qbittorrent-qt5
             break
             ;;
         "Dev")

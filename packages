@@ -14,8 +14,7 @@ paru -S --needed ttf-jetbrains-mono ttf-symbola ttf-ms-fonts nerd-fonts-jetbrain
 #### Environment ####
 #####################
 
-paru -S --needed rofi dunst xfce-polkit i3lock-color maim xfce4-power-manager xfce4-settings xfce4-taskmanager ly \
-        dunst
+paru -S --needed rofi dunst xfce-polkit i3lock-color maim xfce4-taskmanager ly dunst update-grub
 
 ###################
 #### Libraries ####
