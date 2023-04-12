@@ -1,4 +1,4 @@
-{ config, pkgs, hyperland, ... }:
+{ config, pkgs, hyprland, ... }:
 
 {
   imports = [ ../common.nix ];
