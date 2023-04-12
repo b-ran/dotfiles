@@ -12,7 +12,7 @@
 
   services.wayland.enable = true;
   imports = [
-    hyperland.nixosModules.hyperland
+    hyprland.nixosModules.hyprland
   ];
 
   nixpkgs.config.allowUnfree = true;
