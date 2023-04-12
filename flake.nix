@@ -24,7 +24,7 @@
       nixosConfigurations = {
         vm = lib.nixosSystem {
           modules = [
-            (import ./hosts/vm.nix)
+            (import ./hosts/vm/vm.nix)
             home-manager.nixosModules.home-manager
             ({ pkgs, ... }: {
               environment.systemPackages = with pkgs; [
