@@ -1,4 +1,0 @@
-#!/bin/bash
-source ~/.config/themes/colors
-
-echo "^b$bg^ ^c$mem_ic_fg^^b$mem_ic_bg^  ^c$mem_fg^^b$mem_bg^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g) "
