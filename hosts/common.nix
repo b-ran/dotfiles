@@ -23,6 +23,15 @@
     vim
   ];
 
+  # Enable GDM as the display manager
+  services.xserver.displayManager.gdm = {
+    enable = true;
+    wayland = true;
+  };
+
+  # Set the default session to use Hyprland
+  services.xserver.displayManager.defaultSession = "hyprland";
+
   users.users.brandon = {
     password = "changeme";
     isNormalUser = true;
