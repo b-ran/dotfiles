@@ -1,3 +1,0 @@
-[submodule "dwm/dwm-flexipatch"]
-	path = dwm/dwm-flexipatch
-	url = git@github.com:b-ran/dwm-flexipatch.git

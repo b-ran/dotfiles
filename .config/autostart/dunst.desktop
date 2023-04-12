@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=dunst
-Comment=Notification Daemon
-Exec=/usr/bin/dunst -config ~/.config/themes/dunstrc
-Terminal=false
-Type=Application
-StartupNotify=false
